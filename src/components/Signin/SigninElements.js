@@ -16,7 +16,8 @@ export const Container = styled.div`
   );
 `;
 export const FormWrap = styled.div`
-  height: 100px;
+  /* height: 100px; */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,12 +29,11 @@ export const FormWrap = styled.div`
 `;
 
 export const Icon = styled(Link)`
-  margin-left: 32px;
-  margin-top: 32px;
+  margin: 32px;
   text-decoration: none;
   color: #fff;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 24px;
 
   @media screen and (max-width: 450px) {
     margin-left: 16px;
