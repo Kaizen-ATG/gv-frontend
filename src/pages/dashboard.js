@@ -1,18 +1,8 @@
 import React from "react";
+import Layout from "../components/layout/layout";
 
 const Dashboard = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "90vh",
-      }}
-    >
-      <h1>Dashboard</h1>
-    </div>
-  );
+  return <Layout></Layout>;
 };
 
 export default Dashboard;
