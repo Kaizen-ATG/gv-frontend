@@ -17,7 +17,13 @@ const SignIn = () => {
     <>
       <Container>
         <FormWrap>
-          <Icon to="/">GreenVibe</Icon>
+          <Icon to="/">
+            {" "}
+            <img
+              src={require("../../images/logos/logo.svg").default}
+              alt="logo"
+            />
+          </Icon>
           <FormContent>
             <Form action="#">
               <FormH1>Sign in to your account</FormH1>
