@@ -2,18 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
-  min-height: 692px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0px;
+  display: grid;
+  min-height: 500px;
   z-index: hidden;
-  background: linear-gradient(
-    108deg,
-    rgba(1, 147, 86, 1) 0%,
-    rgba(10, 201, 122, 1) 100%
-  );
 `;
 export const FormWrap = styled.div`
   /* height: 100px; */
@@ -23,8 +14,6 @@ export const FormWrap = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 450px) {
-    height: 80%;
-    width: 80%;
   }
 `;
 
@@ -34,15 +23,14 @@ export const Icon = styled(Link)`
   color: #fff;
 
   @media screen and (max-width: 450px) {
-    margin-left: 16px;
-    margin-top: 8px;
+    margin-left: 24px;
+    margin-top: 18px;
   }
 `;
 
 export const FormContent = styled.div`
   height: 100%;
-  display: flex;
-  flex-direction: column;
+
   justify-content: center;
 
   @media screen and (max-width: 480px) {
@@ -51,7 +39,11 @@ export const FormContent = styled.div`
 `;
 
 export const Form = styled.form`
-  background: #010101;
+  background: linear-gradient(
+    108deg,
+    rgba(1, 147, 86, 1) 0%,
+    rgba(10, 201, 122, 1) 100%
+  );
   max-width: 400px;
   height: auto;
   width: 100%;
@@ -62,7 +54,7 @@ export const Form = styled.form`
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 450px) {
     padding: 32px 32px;
   }
 `;
@@ -89,7 +81,7 @@ export const FormInput = styled.input`
 `;
 
 export const FormButton = styled.button`
-  background: #12c35a;
+  background: #010101;
   padding: 16px 0;
   border: none;
   border-radius: 4px;
