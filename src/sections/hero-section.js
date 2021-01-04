@@ -14,6 +14,7 @@ function HeroSection() {
             Do your <br />
             bit for a greener globe, while earning rewards
           </Title>
+
           <Description>
             For people who want to drive change and make a difference with
             helping save the environment.

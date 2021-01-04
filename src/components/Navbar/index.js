@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBars } from "react-icons/fa";
+
 import {
   Nav,
   NavbarContainer,
@@ -17,13 +17,21 @@ const Navbar = ({ toggle }) => {
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">GreenVibe</NavLogo>
+          <NavLogo to="/">
+            <img
+              src={require("../../images/logos/logo.svg").default}
+              alt="logo"
+            />
+          </NavLogo>
           <MobileIcon onClick={toggle}>
-            <FaBars />
+            <img
+              src={require("../../images/icons/hamburger.svg").default}
+              alt="logo"
+            />
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">About GreenVibe</NavLinks>
+              <NavLinks to="about">About</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to="dhow-it-works">How it works</NavLinks>

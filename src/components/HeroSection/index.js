@@ -23,6 +23,7 @@ const HeroSection = () => {
       <HeroBg></HeroBg>
       <HeroContent>
         <HeroH1>Do your bit for a greener globe, while earning rewards</HeroH1>
+
         <HeroP>
           For people who want to drive change and make a difference with helping
           save the environment.
@@ -33,7 +34,7 @@ const HeroSection = () => {
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"
-            dark="true"
+            dark=""
           >
             Get started {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>

@@ -32,8 +32,6 @@ export const Icon = styled(Link)`
   margin: 32px;
   text-decoration: none;
   color: #fff;
-  font-weight: 700;
-  font-size: 24px;
 
   @media screen and (max-width: 450px) {
     margin-left: 16px;
@@ -91,7 +89,7 @@ export const FormInput = styled.input`
 `;
 
 export const FormButton = styled.button`
-  background: #01bf71;
+  background: #12c35a;
   padding: 16px 0;
   border: none;
   border-radius: 4px;
