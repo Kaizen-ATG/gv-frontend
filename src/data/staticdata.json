@@ -1,0 +1,46 @@
+{
+  "cells": [
+    {
+      "key": 1,
+      "title": "Roger",
+      "image": "../../images/logos/ae-logo.svg",
+      "greenpoints": 20,
+      "carbonpoints": 50
+    },
+    {
+      "key": 2,
+      "title": "Jamie",
+      "image": "../images/logos/ae-logo.svg",
+      "greenpoints": 20,
+      "carbonpoints": 50
+    },
+    {
+      "key": 3,
+      "title": "Beth",
+      "image": "/images/logos/ae-logo.svg",
+      "greenpoints": 20,
+      "carbonpoints": 50
+    },
+    {
+      "key": 4,
+      "title": "Pablo",
+      "image": "/images/logos/ae-logo.svg",
+      "greenpoints": 20,
+      "carbonpoints": 50
+    },
+    {
+      "key": 5,
+      "title": "Wallie",
+      "image": "/images/logos/ae-logo.svg",
+      "greenpoints": 20,
+      "carbonpoints": 50
+    },
+    {
+      "key": 6,
+      "title": "Kath",
+      "image": "/images/logos/ae-logo.svg",
+      "greenpoints": 20,
+      "carbonpoints": 50
+    }
+  ]
+}
