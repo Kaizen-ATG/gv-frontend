@@ -11,7 +11,7 @@ import {
   Button
 } from "../components/buttons/PrimaryBtn";
 
-const Dashboard = () => {
+const AddPoints = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -36,4 +36,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default AddPoints;
