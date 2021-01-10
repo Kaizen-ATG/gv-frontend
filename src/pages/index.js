@@ -3,7 +3,6 @@ import HeroSection from "../components/HeroSection";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Layout from "../components/layout/layout";
-import ProfileSection from "../components/ProfileSection";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
