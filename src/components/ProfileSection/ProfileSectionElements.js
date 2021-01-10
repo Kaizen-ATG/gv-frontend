@@ -113,5 +113,14 @@ export const SectionText = styled(H1)`
   }
 `;
 export const VerificationInput = styled.div`
-  justify-items: center;
+display: grid;
+justify-content: center;
+justify-items: center;
+position: 'absolute', 
+left: '50%', 
+top: '50%',
+transform: 'translate(-50%, -50%)',
+margin: 0 5px;
+margin-bottom:50px;
+margin-top:50px;
 `;

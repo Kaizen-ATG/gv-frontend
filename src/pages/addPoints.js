@@ -22,11 +22,15 @@ const Dashboard = () => {
       <Layout>
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
-        <SectionText>Add Points</SectionText>
+        <VerificationInput>
+        <SectionText>Enter Code</SectionText>
+        </VerificationInput>  
         <VerificationInput>
         <ReactCodeInput  type='text' fields={4}/>
         </VerificationInput>
+        <VerificationInput>
         <Button type="submit"> Submit </Button>
+        </VerificationInput>
       </Layout>
     </>
   );
