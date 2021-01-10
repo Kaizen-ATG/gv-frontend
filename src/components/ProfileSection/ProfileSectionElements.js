@@ -112,3 +112,6 @@ export const SectionText = styled(H1)`
     font-size: 32px;
   }
 `;
+export const VerificationInput = styled.div`
+  justify-items: center;
+`;
