@@ -29,16 +29,10 @@ const Navbar = ({ toggle }) => {
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
           <NavLogo to="/">
-            <img
-              src={require("../../images/logos/logo.svg").default}
-              alt="logo"
-            />
+            <img src="/images/logos/logo.svg" alt="logo" />
           </NavLogo>
           <MobileIcon onClick={toggle}>
-            <img
-              src={require("../../images/icons/hamburger.svg").default}
-              alt="logo"
-            />
+            <img src="/images/icons/hamburger.svg" alt="logo" />
           </MobileIcon>
           <NavMenu>
             <NavItem>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "../ButtonElement";
 import {
   ProfileWrapper,
   PlayerGroup,
@@ -12,17 +13,23 @@ import {
   GreenWeekPoints,
   Descgreen,
   CarbonWeekPoints,
+  BtnWrapper,
   Descarb,
+  AddIcon,
+  GiftIcon,
 } from "./ProfileSectionElements";
 
 const ProfileSection = (props) => {
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  };
   return (
     <ProfileWrapper>
       <PlayerGroup>
         <SectionText>{props.text}</SectionText>
-        <PlayerAvatar
-          src={require("../../images/avatars/avatar01.svg").default}
-        />
+        <PlayerAvatar src="/images/avatars/avatar05.svg" />
         <PlayerPoints>
           <Greenli>{props.gpoints}</Greenli>
           <Carbonli>{props.cpoints}</Carbonli>
@@ -38,6 +45,27 @@ const ProfileSection = (props) => {
             <Descarb>Carbon free</Descarb>
           </CarbonWeekPoints>
         </PlayerWeekPoints>
+        <BtnWrapper>
+          <Button
+            to="redeempoints"
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
+            primary=""
+            dark="true"
+            btnborder="true"
+          >
+            {hover ? <GiftIcon /> : <GiftIcon />} Redeem Points
+          </Button>
+          <Button
+            to="addpoints"
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
+            primary="true"
+            dark=""
+          >
+            {hover ? <AddIcon /> : <AddIcon />} Add Points
+          </Button>
+        </BtnWrapper>
       </PlayerGroup>
     </ProfileWrapper>
   );
