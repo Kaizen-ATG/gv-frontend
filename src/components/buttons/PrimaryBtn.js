@@ -31,3 +31,13 @@ const BtnTitle = styled(MediumText)`
   color: white;
   font-weight: bold;
 `;
+export const Button = styled.button`
+  background: #12c35a;
+  border-radius: 50px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+`;
