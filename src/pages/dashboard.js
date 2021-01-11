@@ -17,8 +17,8 @@ const Dashboard = () => {
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
         <ProfileSection
-          gpoints="60"
-          cpoints="80"
+          gpoints="120"
+          cpoints="160"
           text="Hello Stephany"
           note="Here’s a look at your score this week"
           greenweekpoints="10"

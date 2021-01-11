@@ -42,9 +42,9 @@ export const PlayerPoints = styled.div`
   margin: 12px 0 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 24px;
+  grid-gap: 8px;
   border: 1px solid black;
-  padding: 4px;
+  padding: 4px 8px;
   border-radius: 16px;
   max-width: 80px;
   justify-self: center;
@@ -69,6 +69,7 @@ export const Descarb = styled(SmallText)`
 export const Carbonli = styled.div`
   font-size: 13px;
   font-weight: 500;
+  padding-right: 8px;
   color: #785399;
   align-self: center;
   justify-self: center;
