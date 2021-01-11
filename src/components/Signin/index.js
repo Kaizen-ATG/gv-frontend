@@ -19,10 +19,7 @@ const SignIn = () => {
         <FormWrap>
           <Icon to="/">
             {" "}
-            <img
-              src={require("../../images/logos/logo.svg").default}
-              alt="logo"
-            />
+            <img src="/images/logos/logo.svg" alt="logo" />
           </Icon>
           <FormContent>
             <Form action="#">

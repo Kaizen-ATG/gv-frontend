@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { H1, SmallText } from "../../styles/TextStyles";
 import { themes } from "../../styles/ColorStyles";
+import { MdAdd } from "react-icons/md";
+import { GoGift } from "react-icons/go";
 
 export const ProfileWrapper = styled.div`
   /* background: green; */
-  margin: 120px 0px 60px;
+  margin: 120px 0px 120px;
   /* background: url(''); */
   background-size: cover;
   display: grid;
@@ -13,7 +15,7 @@ export const ProfileWrapper = styled.div`
   position: relative;
 
   @media (max-width: 640px) {
-    margin: 100px 0px 160px;
+    margin: 100px 0px 200px;
     height: 200px;
   }
 `;
@@ -71,6 +73,7 @@ export const Carbonli = styled.div`
   align-self: center;
   justify-self: center;
 `;
+
 export const Note = styled.p`
   margin-top: 32px;
   font-size: 13px;
@@ -93,7 +96,7 @@ export const GreenWeekPoints = styled.h3`
   font-size: 40px;
   color: #785399;
   font-weight: 800;
-  justify-items: center;
+  text-align: center;
 `;
 
 export const CarbonWeekPoints = styled.h3`
@@ -101,6 +104,7 @@ export const CarbonWeekPoints = styled.h3`
   font-size: 40px;
   color: #999;
   font-weight: 800;
+  text-align: center;
 `;
 
 export const SectionText = styled(H1)`
@@ -112,15 +116,24 @@ export const SectionText = styled(H1)`
     font-size: 32px;
   }
 `;
-export const VerificationInput = styled.div`
-display: grid;
-justify-content: center;
-justify-items: center;
-position: 'absolute', 
-left: '50%', 
-top: '50%',
-transform: 'translate(-50%, -50%)',
-margin: 0 5px;
-margin-bottom:50px;
-margin-top:50px;
+
+export const BtnWrapper = styled.div`
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: auto 180px;
+  grid-gap: 12px;
+  align-items: center;
+  @media (max-width: 450px) {
+    grid-template-columns: 160px 140px;
+  }
+`;
+
+export const AddIcon = styled(MdAdd)`
+  margin-right: 8px;
+  font-size: 20px;
+`;
+
+export const GiftIcon = styled(GoGift)`
+  margin-right: 8px;
+  font-size: 20px;
 `;
