@@ -30,6 +30,7 @@ export const CellPoints = styled.div`
   padding: 12px 0;
   display: grid;
   grid-template-columns: 30px auto;
+  grid-gap: 12px;
 `;
 
 export const GreenPoints = styled.div`

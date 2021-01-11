@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
-import { FaTimes } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
 
 export const SidebarContainer = styled.aside`
   position: fixed;
@@ -19,7 +19,7 @@ export const SidebarContainer = styled.aside`
   /* top: 100; */
 `;
 
-export const CloseIcon = styled(FaTimes)`
+export const CloseIcon = styled(IoMdClose)`
   color: #0d0d0d;
 `;
 
