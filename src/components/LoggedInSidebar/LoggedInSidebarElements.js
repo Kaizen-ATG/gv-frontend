@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link as LinkR } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
-import { MdAdd } from "react-icons/md";
+import { IoAddCircleOutline } from "react-icons/io5";
+import { IoHelpCircleOutline } from "react-icons/io5";
 import { GoGift } from "react-icons/go";
-import { BsQuestionCircle } from "react-icons/bs";
 
 export const LgInSidebarContainer = styled.aside`
   position: fixed;
@@ -103,14 +103,14 @@ export const LgInSidebarRoute = styled(LinkR)`
   }
 `;
 
-export const AddIcon = styled(MdAdd)`
-  font-size: 20px;
+export const AddIcon = styled(IoAddCircleOutline)`
+  font-size: 22px;
 `;
 
 export const GiftIcon = styled(GoGift)`
   font-size: 20px;
 `;
 
-export const AskHow = styled(BsQuestionCircle)`
-  font-size: 20px;
+export const AskHow = styled(IoHelpCircleOutline)`
+  font-size: 22px;
 `;
