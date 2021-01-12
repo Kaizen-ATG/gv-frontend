@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { RiLeafLine } from "react-icons/ri";
+import { BiCubeAlt } from "react-icons/bi";
 
 export const CellGroup = styled.div`
   margin: 0 20px auto;
@@ -29,18 +31,29 @@ export const CellContent = styled.div`
 export const CellPoints = styled.div`
   padding: 12px 0;
   display: grid;
-  grid-template-columns: 30px auto;
+  grid-template-columns: 13px 20px 13px 20px auto;
   grid-gap: 12px;
 `;
 
 export const GreenPoints = styled.div`
+  margin-left: -6px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0ea44b;
+`;
+
+export const CarbonPoints = styled.div`
+  margin-left: -6px;
   font-size: 13px;
   font-weight: 800;
   color: #785399;
 `;
 
-export const CarbonPoints = styled.div`
+export const LeafIcon = styled(RiLeafLine)`
   font-size: 13px;
-  font-weight: 400;
-  color: #777;
+  color: #0ea44b;
+`;
+
+export const CarbonIcon = styled(BiCubeAlt)`
+  font-size: 14px;
 `;

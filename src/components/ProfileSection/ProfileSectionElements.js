@@ -3,6 +3,8 @@ import { H1, SmallText } from "../../styles/TextStyles";
 import { themes } from "../../styles/ColorStyles";
 import { MdAdd } from "react-icons/md";
 import { GoGift } from "react-icons/go";
+import { RiLeafLine } from "react-icons/ri";
+import { BiCubeAlt } from "react-icons/bi";
 
 export const ProfileWrapper = styled.div`
   /* background: green; */
@@ -41,19 +43,19 @@ export const PlayerAvatar = styled.img`
 export const PlayerPoints = styled.div`
   margin: 12px 0 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 8px;
+  grid-template-columns: 14px 20px 14px 20px;
+  grid-gap: 12px;
   border: 1px solid black;
-  padding: 4px 8px;
+  padding: 8px 8px;
   border-radius: 16px;
-  max-width: 80px;
+  max-width: 140px;
   justify-self: center;
 `;
 export const Greenli = styled.div`
-  margin: 0 0 0 4px;
   font-size: 13px;
+  margin-right: 10px;
   font-weight: 800;
-  color: #785399;
+  color: #0ea44b;
   align-self: center;
   justify-self: center;
 `;
@@ -68,7 +70,7 @@ export const Descarb = styled(SmallText)`
 
 export const Carbonli = styled.div`
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 800;
   padding-right: 8px;
   color: #785399;
   align-self: center;
@@ -95,7 +97,7 @@ export const PlayerWeekPoints = styled.div`
 export const GreenWeekPoints = styled.h3`
   padding: 8px;
   font-size: 40px;
-  color: #785399;
+  color: #0ea44b;
   font-weight: 800;
   text-align: center;
 `;
@@ -103,7 +105,7 @@ export const GreenWeekPoints = styled.h3`
 export const CarbonWeekPoints = styled.h3`
   padding: 8px;
   font-size: 40px;
-  color: #999;
+  color: #785399;
   font-weight: 800;
   text-align: center;
 `;
@@ -137,4 +139,13 @@ export const AddIcon = styled(MdAdd)`
 export const GiftIcon = styled(GoGift)`
   margin-right: 8px;
   font-size: 20px;
+`;
+
+export const LeafIcon = styled(RiLeafLine)`
+  font-size: 13px;
+  color: #0ea44b;
+`;
+
+export const CarbonIcon = styled(BiCubeAlt)`
+  font-size: 14px;
 `;

@@ -32,7 +32,7 @@ const Navbar = ({ toggle }) => {
             <img src="/images/logos/logo.svg" alt="logo" />
           </NavLogo>
           <MobileIcon onClick={toggle}>
-            <img src="/images/icons/hamburger.svg" alt="logo" />
+            <img src="/images/icons/hamburger.svg" alt="hamburger icon" />
           </MobileIcon>
           <NavMenu>
             <NavItem>
