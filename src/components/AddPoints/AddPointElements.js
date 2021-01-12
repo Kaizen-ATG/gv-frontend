@@ -53,7 +53,7 @@ export const Form = styled.form`
   grid-gap: 20px;
   align-items: center;
   margin: 0 auto;
-  padding: 80px 32px;
+  padding: 0px 32px;
   border-radius: 4px;
   /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4); */
 
