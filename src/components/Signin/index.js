@@ -10,6 +10,7 @@ import {
   FormContent,
   FormInput,
   FormLabel,
+  ImageWrapper,
 } from "./SigninElements";
 
 const SignIn = () => {
@@ -23,7 +24,11 @@ const SignIn = () => {
           </Icon>
           <FormContent>
             <Form action="#">
-              <FormH1>Sign in to your account</FormH1>
+              <ImageWrapper
+                src="/images/elements/sign-in.svg"
+                alt="enter code"
+              />
+              <FormH1>Sign in</FormH1>
               <FormLabel htmlFor="for">Email</FormLabel>
               <FormInput type="email" required />
               <FormLabel htmlFor="for">Password</FormLabel>

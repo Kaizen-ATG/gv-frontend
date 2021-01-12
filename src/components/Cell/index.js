@@ -7,6 +7,8 @@ import {
   CellPoints,
   GreenPoints,
   CarbonPoints,
+  CarbonIcon,
+  LeafIcon,
 } from "./CellElements";
 
 const Cell = (props) => (
@@ -15,7 +17,9 @@ const Cell = (props) => (
     <CellContent>
       <CellTitle>{props.title}</CellTitle>
       <CellPoints>
+        <> {<LeafIcon />}</>
         <GreenPoints>{props.gpoints}</GreenPoints>
+        <> {<CarbonIcon />}</>
         <CarbonPoints>{props.cpoints}</CarbonPoints>
       </CellPoints>
     </CellContent>
