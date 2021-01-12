@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
+import { MdAdd } from "react-icons/md";
+import { GoGift } from "react-icons/go";
+import { BsQuestionCircle } from "react-icons/bs";
 
-export const SidebarContainer = styled.aside`
+export const LgInSidebarContainer = styled.aside`
   position: fixed;
   z-index: 999;
   width: 100%;
@@ -34,34 +36,39 @@ export const Icon = styled.div`
   outline: none;
 `;
 
-export const SidebarWrapper = styled.div`
+export const LgInSidebarWrapper = styled.div`
   align-self: flex-start;
   margin-top: 60px;
   text-align: center;
 `;
 
-export const SidebarMenu = styled.ul`
+export const LgInSidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, 48px);
-
+  grid-template-rows: repeat(5, 48px);
   @media screen and (max-width: 450px) {
-    grid-template-rows: repeat(4, 48px);
+    grid-template-rows: repeat(5, 48px);
   }
 `;
 
-export const SidebarLink = styled(LinkS)`
-  display: flex;
+export const LgInSidebarLinkWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 24px auto;
+  grid-gap: 12px;
   align-items: center;
-
   padding-left: 24px;
+  border-bottom: 1px solid #e5e5e5;
+`;
+
+export const LgInSidebarLink = styled(LinkR)`
   font-size: 14px;
+  text-align: left;
   text-decoration: none;
   list-style: none;
   transition: 0.2s ease-in-out;
   text-decoration: none;
   color: #0d0d0d;
-  border-bottom: 1px solid #e5e5e5;
+
   cursor: pointer;
 
   &:hover {
@@ -70,12 +77,12 @@ export const SidebarLink = styled(LinkS)`
   }
 `;
 
-export const SideBtnWrap = styled.div`
+export const LgInSideBtnWrap = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-export const SidebarRoute = styled(LinkR)`
+export const LgInSidebarRoute = styled(LinkR)`
   border-radius: 50px;
   background: #12c35a;
   white-space: nowrap;
@@ -94,4 +101,16 @@ export const SidebarRoute = styled(LinkR)`
     color: #010606;
     border: 1px solid;
   }
+`;
+
+export const AddIcon = styled(MdAdd)`
+  font-size: 20px;
+`;
+
+export const GiftIcon = styled(GoGift)`
+  font-size: 20px;
+`;
+
+export const AskHow = styled(BsQuestionCircle)`
+  font-size: 20px;
 `;
