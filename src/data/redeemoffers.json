@@ -1,0 +1,34 @@
+{
+  "cells": [
+    {
+      "key": 1,
+      "title": "Starbucks",
+      "image": "/images/retailers/starbucks.svg",
+      "discount": "25% discount on coffee"
+    },
+    {
+      "key": 2,
+      "title": "Airbnb",
+      "image": "/images/retailers/airbnb.svg",
+      "discount": "15% coupon codes"
+    },
+    {
+      "key": 3,
+      "title": "Apple Music",
+      "image": "/images/retailers/apple-music.svg",
+      "discount": "3 months free offer"
+    },
+    {
+      "key": 4,
+      "title": "Amazon",
+      "image": "/images/retailers/amazon.svg",
+      "discount": "£5 coupon code"
+    },
+    {
+      "key": 5,
+      "title": "Apple Store",
+      "image": "/images/retailers/apple-store.svg",
+      "discount": "Get a 15% coupon"
+    }
+  ]
+}

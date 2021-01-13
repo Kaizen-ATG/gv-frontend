@@ -25,7 +25,11 @@ const LoggedInSidebar = ({ isOpen, toggle }) => {
       <LgInSidebarWrapper>
         <LgInSidebarMenu>
           <LgInSidebarLinkWrapper>
-            <img src="/images/avatars/steph.png" alt="profile" />
+            <img
+              src="/images/avatars/avatar05.svg"
+              height="24px"
+              alt="profile"
+            />
             <LgInSidebarLink to="profile" onClick={toggle}>
               Profile
             </LgInSidebarLink>

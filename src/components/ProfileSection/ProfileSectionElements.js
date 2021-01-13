@@ -46,7 +46,7 @@ export const PlayerPoints = styled.div`
   grid-template-columns: 14px 20px 14px 20px;
   grid-gap: 12px;
   border: 1px solid black;
-  padding: 8px 8px;
+  padding: 4px 8px;
   border-radius: 16px;
   max-width: 140px;
   justify-self: center;

@@ -4,6 +4,7 @@ import SigninPage from "./pages/signin";
 import Dashboard from "./pages/dashboard";
 import AddPoints from "./pages/addPoints";
 import RedeemPointsStarbucks from "./pages/redeemPointsStarbucks";
+import Redeem from "./pages/redeem";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/signin" component={SigninPage} exact />
         <Route path="/dashboard" component={Dashboard} exact />
         <Route path="/addpoints" component={AddPoints} exact />
+        <Route path="/redeem" component={Redeem} exact />
         <Route
           path="/redeemPointsStarbucks"
           component={RedeemPointsStarbucks}
