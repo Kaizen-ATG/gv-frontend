@@ -8,10 +8,15 @@ export const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 120px 30px 120px;
-  height: 800px;
+  padding: 120px 30px 20px;
+  height: 600px;
   position: relative;
   z-index: 1;
+  @media (max-width: 450px) {
+    padding: 30px;
+    height: 560px;
+    margin-bottom: 30px;
+  }
 `;
 
 export const HeroBg = styled.div`
@@ -22,7 +27,17 @@ export const HeroBg = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+`;
+
+export const HeroImg = styled.img`
+  position: absolute;
+  width: 100%;
+
+  height: 400px;
+  margin-top: 200px;
+  @media (max-width: 450px) {
+    padding: 30px;
+  }
 `;
 
 export const VideoBg = styled.video`
@@ -47,10 +62,10 @@ export const HeroH1 = styled(H1)`
   color: ${themes.light.text1};
   text-align: center;
 
-  @media screen and (max-width: 768px) {
-    font-size: 40px;
+  @media screen and (max-width: 900px) {
+    font-size: 48px;
   }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 450px) {
     font-size: 32px;
   }
 `;
