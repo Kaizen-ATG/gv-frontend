@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import {
   Nav,
   NavbarContainer,
@@ -24,11 +25,15 @@ const Navbar = ({ toggle }) => {
     window.addEventListener("scroll", changeNav);
   }, []);
 
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
       <Nav scrollNav={scrollNav}>
         <NavbarContainer>
-          <NavLogo to="/">
+          <NavLogo to="/" onClick={toggleHome}>
             <img src="/images/logos/logo.svg" alt="logo" />
           </NavLogo>
           <MobileIcon onClick={toggle}>
