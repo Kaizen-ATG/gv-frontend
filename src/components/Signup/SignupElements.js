@@ -48,14 +48,13 @@ export const Form = styled.form`
   z-index: 1;
   display: flex;
   flex-flow: column;
-
   margin: 0 auto;
   padding: 80px 32px;
   border-radius: 4px;
   /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4); */
 
   @media screen and (max-width: 450px) {
-    padding: 40px 32px;
+    padding: 0px 32px;
     width: 90%;
   }
 `;
@@ -98,29 +97,11 @@ export const FormButton = styled.button`
   cursor: pointer;
 `;
 
-export const Text = styled.a`
+export const Text = styled.p`
   text-align: center;
   margin-top: 14px;
   font-size: 13px;
   text-align: right;
-  cursor: pointer;
-`;
-
-export const ImageWrapper = styled.img`
-  height: 180px;
-  margin: -40px 0 40px 0;
-  @media (max-width: 450px) {
-    height: 140px;
-    margin-top: -10px;
-  }
-`;
-
-export const SkipSection = styled.div`
-  display: grid;
-  align-items: end;
-  justify-items: right;
-  grid-template-columns: 1fr 100px;
-  margin-top: 20px;
 `;
 
 export const NavLink = styled(LinkR)`
@@ -142,4 +123,21 @@ export const NavLink = styled(LinkR)`
   &.active {
     border-bottom: 3px solid #01bf71;
   }
+`;
+
+export const ImageWrapper = styled.img`
+  height: 180px;
+  margin: -40px 0 40px 0;
+  @media (max-width: 450px) {
+    height: 140px;
+    margin-top: -10px;
+  }
+`;
+
+export const SignInSection = styled.div`
+  display: grid;
+  align-items: end;
+  justify-items: right;
+  grid-template-columns: 1fr 100px;
+  margin-top: 20px;
 `;

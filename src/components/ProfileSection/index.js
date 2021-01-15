@@ -51,7 +51,7 @@ const ProfileSection = (props) => {
         </PlayerWeekPoints>
         <BtnWrapper>
           <Button
-            to="redeempoints"
+            to="redeem"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary=""
