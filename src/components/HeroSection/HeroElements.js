@@ -4,11 +4,10 @@ import { H1, MediumText } from "../../styles/TextStyles";
 import { themes } from "../../styles/ColorStyles";
 
 export const HeroContainer = styled.div`
-  background: #f2f2f2;
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 120px 30px 20px;
+  padding: 0px 30px 20px;
   height: 600px;
   position: relative;
   z-index: 1;
@@ -20,23 +19,26 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroBg = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  margin-top: 100px;
+  /* background-image: url("/images/elements/background.svg"); */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  overflow: hidden;
 `;
 
 export const HeroImg = styled.img`
   position: absolute;
   width: 100%;
-
   height: 400px;
   margin-top: 200px;
+  @media (max-width: 767px) {
+    object-fit: cover;
+  }
   @media (max-width: 450px) {
-    padding: 30px;
+    object-fit: cover;
   }
 `;
 
@@ -49,13 +51,17 @@ export const VideoBg = styled.video`
 `;
 
 export const HeroContent = styled.div`
-  z-index: 3;
+  margin-top: 60px;
   max-width: 1200px;
   position: absolute;
   padding: 8px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 767px) {
+  }
+  @media (max-width: 450px) {
+  }
 `;
 
 export const HeroH1 = styled(H1)`
@@ -88,6 +94,7 @@ export const HeroP = styled(MediumText)`
 `;
 
 export const HeroBtnWrapper = styled.div`
+  z-index: 3;
   margin-top: 32px;
   display: flex;
   flex-direction: column;

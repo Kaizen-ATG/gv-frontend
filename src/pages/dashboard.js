@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/layout";
 import LeaderboardSection from "../components/LeaderBoardSection/Index";
+import LoggedInNavbar from "../components/LoggedInNavbar";
 import LoggedInSidebar from "../components/LoggedInSidebar";
-import Navbar from "../components/Navbar";
 import ProfileSection from "../components/ProfileSection";
 
 const Dashboard = () => {
@@ -15,7 +15,7 @@ const Dashboard = () => {
     <>
       <Layout>
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
-        <Navbar toggle={toggle} />
+        <LoggedInNavbar toggle={toggle} />
         <ProfileSection
           gpoints="120"
           cpoints="160"

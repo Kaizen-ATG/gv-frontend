@@ -11,11 +11,11 @@ import {
   FormInput,
   FormLabel,
   ImageWrapper,
-  SkipSection,
+  SignInSection,
   NavLink,
-} from "./SigninElements";
+} from "./SignupElements";
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <>
       <Container>
@@ -30,7 +30,9 @@ const SignIn = () => {
                 src="/images/elements/sign-in.svg"
                 alt="enter code"
               />
-              <FormH1>Sign in</FormH1>
+              <FormH1>Sign Up</FormH1>
+              <FormLabel htmlFor="for">Username</FormLabel>
+              <FormInput type="username" required />
               <FormLabel htmlFor="for">Email</FormLabel>
               <FormInput type="email" required />
               <FormLabel htmlFor="for">Password</FormLabel>
@@ -38,11 +40,10 @@ const SignIn = () => {
               <FormButton to="/dashboard" type="submit">
                 Continue
               </FormButton>
-              <Text>Forgot password</Text>
-              <SkipSection>
-                <Text>Temporary jump for naviagtion -</Text>
-                <NavLink to="/dashboard">Skip</NavLink>
-              </SkipSection>
+              <SignInSection>
+                <Text>Already have an account? - </Text>
+                <NavLink to="/signin">Sign in</NavLink>
+              </SignInSection>
             </Form>
           </FormContent>
         </FormWrap>
@@ -51,4 +52,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default SignUp;

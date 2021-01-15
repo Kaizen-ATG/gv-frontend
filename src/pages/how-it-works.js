@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/layout";
-import AddPoints from "../components/AddPoints";
 import LoggedInSidebar from "../components/LoggedInSidebar";
-
 import LoggedInNavbar from "../components/LoggedInNavbar";
+import AccountSection from "../components/AccountSection";
 
-const Points = () => {
+const HowItWorks = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -17,10 +16,10 @@ const Points = () => {
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
         {/* <Navbar toggle={toggle} /> */}
         <LoggedInNavbar toggle={toggle} />
-        <AddPoints />
+        <AccountSection />
       </Layout>
     </>
   );
 };
 
-export default Points;
+export default HowItWorks;

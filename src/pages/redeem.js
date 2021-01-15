@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/layout";
+import LoggedInNavbar from "../components/LoggedInNavbar";
 import LoggedInSidebar from "../components/LoggedInSidebar";
-import Navbar from "../components/Navbar";
 import RedeemOffersSection from "../components/RedeemOffers";
 
 const Redeem = () => {
@@ -14,7 +14,7 @@ const Redeem = () => {
     <>
       <Layout>
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
-        <Navbar toggle={toggle} />
+        <LoggedInNavbar toggle={toggle} />
         <RedeemOffersSection />
       </Layout>
     </>

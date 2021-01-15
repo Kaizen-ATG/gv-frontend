@@ -8,7 +8,7 @@ import {
   HeroBtnWrapper,
   ArrowForward,
   ArrowRight,
-  HeroBg,
+  HeroImg,
 } from "./HeroElements";
 
 const HeroSection = () => {
@@ -20,8 +20,8 @@ const HeroSection = () => {
 
   return (
     <HeroContainer>
+      <HeroImg src="/images/elements/background.svg" />
       <HeroContent>
-        <HeroBg></HeroBg>
         <HeroH1>Do your bit for a greener globe, while earning rewards</HeroH1>
         <HeroP>
           For people who want to drive change and make a difference with helping
@@ -29,7 +29,7 @@ const HeroSection = () => {
         </HeroP>
         <HeroBtnWrapper>
           <Button
-            to="signup"
+            to="/signup"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary="true"
