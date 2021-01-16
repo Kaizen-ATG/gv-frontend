@@ -4,7 +4,7 @@ import LoggedInNavbar from "../components/LoggedInNavbar";
 import LoggedInSidebar from "../components/LoggedInSidebar";
 import RedeemSummarySection from "../components/RedeemSummary";
 
-const RedeemSummary = () => {
+const RedeemSummary = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -15,7 +15,7 @@ const RedeemSummary = () => {
       <Layout>
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
         <LoggedInNavbar toggle={toggle} />
-        <RedeemSummarySection />
+        <RedeemSummarySection {...props} />
       </Layout>
     </>
   );
