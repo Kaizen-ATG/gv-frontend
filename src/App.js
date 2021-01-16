@@ -6,7 +6,7 @@ import Dashboard from "./pages/dashboard";
 import AddPoints from "./pages/addPoints";
 import Profile from "./pages/profile";
 import HowItWorks from "./pages/how-it-works";
-import RedeemPointsStarbucks from "./pages/redeemPointsStarbucks";
+import RedeemSummary from "./pages/redeemsummary";
 import Redeem from "./pages/redeem";
 
 function App() {
@@ -21,11 +21,7 @@ function App() {
         <Route path="/addpoints" component={AddPoints} exact />
         <Route path="/profile" component={Profile} exact />
         <Route path="/redeem" component={Redeem} exact />
-        <Route
-          path="/redeemPointsStarbucks"
-          component={RedeemPointsStarbucks}
-          exact
-        />
+        <Route path="/redeem-summary" component={RedeemSummary} exact />
       </Switch>
     </Router>
   );

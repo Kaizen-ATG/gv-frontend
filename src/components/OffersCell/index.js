@@ -7,10 +7,13 @@ import {
   CellPoints,
   Discount,
   BagIconTick,
+  NavItem,
+  NavBtn,
+  RightArrowIcon,
 } from "./OffersCellElements";
 
 const OffersCell = (props) => (
-  <CellGroup>
+  <CellGroup to="/redeem-summary">
     <CellImage image={props.image}></CellImage>
     <CellContent>
       <CellTitle>{props.title}</CellTitle>
@@ -19,6 +22,9 @@ const OffersCell = (props) => (
         <Discount>{props.disc}</Discount>
       </CellPoints>
     </CellContent>
+    <NavItem>
+      <NavBtn>{<RightArrowIcon />}</NavBtn>
+    </NavItem>
   </CellGroup>
 );
 

@@ -1,9 +1,9 @@
 export const themes = {
   light: {
     text1: `black`,
-    text2: `rgba(0,0,0,0.7)`,
-    primary: `#3913B8`,
-    secondary: "#2FB5FC",
+    text2: `rgba(0,0,0,0.6)`,
+    primary: `#0EA44B`,
+    secondary: "#12C35A",
     backgroundColor: `#fff`,
     /*backgroundColor: `#22f6f6`,*/
     card: {

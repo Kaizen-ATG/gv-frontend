@@ -4,31 +4,36 @@
       "key": 1,
       "title": "Starbucks",
       "image": "/images/retailers/starbucks.svg",
-      "discount": "25% discount on coffee"
+      "discount": "25% discount on coffee",
+      "destination": "offersummary"
     },
     {
       "key": 2,
       "title": "Airbnb",
       "image": "/images/retailers/airbnb.svg",
-      "discount": "15% coupon codes"
+      "discount": "15% coupon codes",
+      "destination": "offersummary"
     },
     {
       "key": 3,
       "title": "Apple Music",
       "image": "/images/retailers/apple-music.svg",
-      "discount": "3 months free offer"
+      "discount": "3 months free offer",
+      "destination": "offersummary"
     },
     {
       "key": 4,
       "title": "Amazon",
       "image": "/images/retailers/amazon.svg",
-      "discount": "£5 coupon code"
+      "discount": "£5 coupon code",
+      "destination": "offersummary"
     },
     {
       "key": 5,
       "title": "Apple Store",
       "image": "/images/retailers/apple-store.svg",
-      "discount": "Get a 15% coupon"
+      "discount": "Get a 15% coupon",
+      "destination": "offersummary"
     }
   ]
 }

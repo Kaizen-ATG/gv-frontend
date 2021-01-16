@@ -30,6 +30,7 @@ const RedeemOffersSection = () => {
             image={cell.image}
             disc={cell.discount}
             cpoints={cell.carbonpoints}
+            dest={cell.destination}
           />
         ))}
       </SectionCellGroup>
