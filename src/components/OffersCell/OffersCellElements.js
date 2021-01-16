@@ -24,6 +24,8 @@ export const CellImage = styled.div`
   width: 60px;
   height: 60px;
   background: #f6f6f6;
+  /* opacity: 0.3;
+  filter: grayscale(100%); */
   border-radius: 50%;
   background-image: url(${(props) => props.image});
   background-size: 60px;
