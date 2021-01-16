@@ -49,28 +49,28 @@ const ProfileSection = (props) => {
             <Descarb>Carbon free</Descarb>
           </CarbonWeekPoints>
         </PlayerWeekPoints>
-        <BtnWrapper>
-          <Button
-            to="redeem"
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary=""
-            dark="true"
-            btnborder="true"
-          >
-            {hover ? <GiftIcon /> : <GiftIcon />} Redeem Points
-          </Button>
-          <Button
-            to="addpoints"
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary="true"
-            dark=""
-          >
-            {hover ? <AddIcon /> : <AddIcon />} Add Points
-          </Button>
-        </BtnWrapper>
       </PlayerGroup>
+      <BtnWrapper>
+        <Button
+          to="redeem"
+          onMouseEnter={onHover}
+          onMouseLeave={onHover}
+          primary=""
+          dark="true"
+          btnborder="true"
+        >
+          {hover ? <GiftIcon /> : <GiftIcon />} Redeem Points
+        </Button>
+        <Button
+          to="addpoints"
+          onMouseEnter={onHover}
+          onMouseLeave={onHover}
+          primary="true"
+          dark=""
+        >
+          {hover ? <AddIcon /> : <AddIcon />} Add Points
+        </Button>
+      </BtnWrapper>
     </ProfileWrapper>
   );
 };

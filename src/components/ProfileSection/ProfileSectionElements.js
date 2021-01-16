@@ -8,23 +8,20 @@ import { BiCubeAlt } from "react-icons/bi";
 
 export const ProfileWrapper = styled.div`
   /* background: green; */
-  margin: 120px 0px 120px;
-  /* background: url(''); */
-  background-size: cover;
+  margin-top: 20px;
   display: grid;
-  grid-template-rows: 300px auto;
+  grid-template-rows: auto;
   grid-gap: 20px;
   position: relative;
+  width: 100%;
 
   @media (max-width: 640px) {
-    margin: 100px 0px 200px;
-    height: 200px;
   }
 `;
 export const PlayerGroup = styled.div`
+  /* background: blue; */
   display: grid;
-  align-content: center;
-  justify-content: center;
+  grid-template-rows: auto;
 `;
 
 export const PlayerAvatar = styled.img`
@@ -121,13 +118,21 @@ export const SectionText = styled(H1)`
 `;
 
 export const BtnWrapper = styled.div`
+  /* background: yellow; */
   margin-top: 32px;
+  margin-bottom: 60px;
   display: grid;
-  grid-template-columns: auto 180px;
-  grid-gap: 12px;
-  align-items: center;
+  grid-template-columns: 200px 200px;
+  grid-gap: 18px;
+  justify-content: center;
+
   @media (max-width: 450px) {
-    grid-template-columns: 160px 140px;
+    display: flex;
+    grid-template-rows: 1fr 1fr;
+    flex-direction: column;
+    line-height: 1.5em;
+    padding: 0 24px;
+    margin-bottom: 60px;
   }
 `;
 
