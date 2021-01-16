@@ -15,10 +15,12 @@ import {
 const OffersCell = (props) => (
   <CellGroup
     to={{
+
       pathname: "/redeem-summary",
       state: { disc: props.disc, title: props.title },
     }}
   >
+
     <CellImage image={props.image}></CellImage>
     <CellContent>
       <CellTitle>{props.title}</CellTitle>

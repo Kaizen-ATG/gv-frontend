@@ -15,7 +15,6 @@ const RedeemSummarySection = (props) => {
   const onHover = () => {
     setHover(!hover);
   };
-
   return (
     <>
       <Container>
