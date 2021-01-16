@@ -9,13 +9,12 @@ import {
   ButtonWrapper,
 } from "./RedeemSummaryElements";
 
-const RedeemSummarySection = () => {
+const RedeemSummarySection = (props) => {
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
     setHover(!hover);
   };
-
   return (
     <>
       <Container>
@@ -24,8 +23,8 @@ const RedeemSummarySection = () => {
             src="/images/Retailers/starbucks.svg"
             alt="Starbucks logo"
           />
-          <ContentH1>Starbucks</ContentH1>
-          <Text>25% discount on coffee</Text>
+          <ContentH1>{props.location.state.title}</ContentH1>
+          <Text>{props.location.state.disc}</Text>
           <ButtonWrapper>
             <Button
               to="/redeem"
