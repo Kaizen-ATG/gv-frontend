@@ -1,7 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 import { H1, MediumText } from "../../styles/TextStyles";
 import { themes } from "../../styles/ColorStyles";
+import { fadeIn } from "react-animations";
+import { fadeInRight } from "react-animations";
+
+const fadeInAnim = keyframes`${fadeIn}`;
+const fadeInRightAnim = keyframes`${fadeInRight}`;
 
 export const HeroContainer = styled.div`
   display: flex;
@@ -34,6 +39,7 @@ export const HeroImg = styled.img`
   width: 100%;
   height: 400px;
   margin-top: 200px;
+  animation: 2s ${fadeInAnim};
   @media (max-width: 767px) {
     object-fit: cover;
   }
@@ -58,6 +64,7 @@ export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: 1s ${fadeInRightAnim};
   @media (max-width: 767px) {
   }
   @media (max-width: 450px) {
