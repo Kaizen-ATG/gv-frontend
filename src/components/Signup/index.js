@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { CTAButton } from "../ButtonElement";
 import {
   Container,
   FormWrap,
@@ -6,16 +7,22 @@ import {
   Form,
   FormH1,
   Text,
-  FormButton,
   FormContent,
   FormInput,
   FormLabel,
   ImageWrapper,
+  ButtonWrapper,
   SignInSection,
   NavLink,
 } from "./SignupElements";
 
-const SignUp = () => {
+const SignIn = () => {
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  };
+
   return (
     <>
       <Container>
@@ -30,18 +37,30 @@ const SignUp = () => {
                 src="/images/elements/sign-in.svg"
                 alt="enter code"
               />
-              <FormH1>Sign Up</FormH1>
+              <FormH1>Sign up</FormH1>
               <FormLabel htmlFor="for">Username</FormLabel>
               <FormInput type="username" required />
               <FormLabel htmlFor="for">Email</FormLabel>
               <FormInput type="email" required />
               <FormLabel htmlFor="for">Password</FormLabel>
               <FormInput type="password" required />
-              <FormButton to="/dashboard" type="submit">
-                Continue
-              </FormButton>
+              <ButtonWrapper>
+                <CTAButton
+                  to="/dashboard"
+                  type="submit"
+                  onMouseEnter={onHover}
+                  onMouseLeave={onHover}
+                  primary="true"
+                  dark=""
+                  btnborder="true"
+                >
+                  {" "}
+                  Continue
+                </CTAButton>
+              </ButtonWrapper>
+
               <SignInSection>
-                <Text>Already have an account? - </Text>
+                <Text>Already have an account?</Text>
                 <NavLink to="/signin">Sign in</NavLink>
               </SignInSection>
             </Form>
@@ -52,4 +71,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignIn;
