@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/layout";
-import LoggedInSidebar from "../components/LoggedInSidebar";
 import LoggedInNavbar from "../components/LoggedInNavbar";
+import LoggedInSidebar from "../components/LoggedInSidebar";
+import PointsSummarySection from "../components/PointsSummary";
 
-import HowItWorksSection from "../components/HowItWorks";
-
-const HowItWorks = () => {
+const PointsSuccess = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -15,12 +14,11 @@ const HowItWorks = () => {
     <>
       <Layout>
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
-        {/* <Navbar toggle={toggle} /> */}
         <LoggedInNavbar toggle={toggle} />
-        <HowItWorksSection />
+        <PointsSummarySection />
       </Layout>
     </>
   );
 };
 
-export default HowItWorks;
+export default PointsSuccess;
