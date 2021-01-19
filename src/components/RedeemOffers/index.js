@@ -19,9 +19,9 @@ import {
   OfferText,
 } from "./RedeemElements";
 
-const barData = [{ bgcolor: "#0EA44B", completed: 30 }];
+const barData = [{ bgcolor: "#0EA44B" }];
 
-const RedeemOffersSection = () => {
+const RedeemOffersSection = (props) => {
   return (
     <>
       <Container>
@@ -36,7 +36,10 @@ const RedeemOffersSection = () => {
             <PointsBar
               key={idx}
               bgcolor={item.bgcolor}
-              completed={item.completed}
+              completed={props.location.state.totalpoints}
+              completedpercentage={
+                (props.location.state.totalpoints / 450) * 100
+              }
             />
           ))}
         </BarContainer>
