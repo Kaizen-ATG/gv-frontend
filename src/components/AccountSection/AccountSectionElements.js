@@ -24,7 +24,7 @@ export const AcctH1 = styled(H1)`
 
 export const AcctImageWrapper = styled.img`
   height: 400px;
-  margin-top: -30px;
+  /* margin-top: -30px; */
   @media (max-width: 450px) {
     height: 300px;
   }

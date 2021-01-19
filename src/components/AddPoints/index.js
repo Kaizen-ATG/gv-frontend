@@ -36,7 +36,7 @@ const AddPoints = () => {
               <FormInput type="code" required />
               <ButtonWrapper>
                 <CTAButton
-                  to="/dashboard"
+                  to="/points-success"
                   type="submit"
                   onMouseEnter={onHover}
                   onMouseLeave={onHover}
@@ -44,7 +44,6 @@ const AddPoints = () => {
                   dark=""
                   btnborder="true"
                 >
-                  {" "}
                   Apply Code
                 </CTAButton>
               </ButtonWrapper>
