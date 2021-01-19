@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import { CTAButton } from "../ButtonElement";
 import {
   Container,
   FormWrap,
   Form,
   FormH1,
-  Text,
-  FormButton,
   FormContent,
   FormInput,
   FormLabel,
   ImageWrapper,
+  ButtonWrapper,
 } from "./AddPointElements";
 
 const AddPoints = () => {
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  };
+
   return (
     <>
       <Container>
@@ -27,9 +33,20 @@ const AddPoints = () => {
               <FormLabel htmlFor="for">
                 Enter the 4 digit code as seen on the kiosk screen/ receipt
               </FormLabel>
-              <FormInput type="email" required />
-              <FormButton type="submit">Apply Code</FormButton>
-              <Text>Where do I find the code?</Text>
+              <FormInput type="code" required />
+              <ButtonWrapper>
+                <CTAButton
+                  to="/points-success"
+                  type="submit"
+                  onMouseEnter={onHover}
+                  onMouseLeave={onHover}
+                  primary="true"
+                  dark=""
+                  btnborder="true"
+                >
+                  Apply Code
+                </CTAButton>
+              </ButtonWrapper>
             </Form>
           </FormContent>
         </FormWrap>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { CTAButton } from "../ButtonElement";
 import {
   Container,
   FormWrap,
@@ -6,22 +7,28 @@ import {
   Form,
   FormH1,
   Text,
-  FormButton,
   FormContent,
   FormInput,
   FormLabel,
   ImageWrapper,
   SkipSection,
+  ButtonWrapper,
+  SignInSection,
   NavLink,
 } from "./SigninElements";
 
 const SignIn = () => {
+  const [hover, setHover] = useState(false);
+
+  const onHover = () => {
+    setHover(!hover);
+  };
+
   return (
     <>
       <Container>
         <FormWrap>
           <Icon to="/">
-            {" "}
             <img src="/images/logos/logo.svg" alt="logo" />
           </Icon>
           <FormContent>
@@ -35,14 +42,28 @@ const SignIn = () => {
               <FormInput type="email" required />
               <FormLabel htmlFor="for">Password</FormLabel>
               <FormInput type="password" required />
-              <FormButton to="/dashboard" type="submit">
-                Continue
-              </FormButton>
-              <Text>Forgot password</Text>
               <SkipSection>
-                <Text>Temporary jump for naviagtion -</Text>
-                <NavLink to="/dashboard">Skip</NavLink>
+                <NavLink to="">Forgot password?</NavLink>
               </SkipSection>
+              <ButtonWrapper>
+                <CTAButton
+                  to="/dashboard"
+                  type="submit"
+                  onMouseEnter={onHover}
+                  onMouseLeave={onHover}
+                  primary="true"
+                  dark=""
+                  btnborder="true"
+                >
+                  {" "}
+                  Continue
+                </CTAButton>
+              </ButtonWrapper>
+
+              <SignInSection>
+                <Text>Don't have an account?</Text>
+                <NavLink to="/signup">Sign up</NavLink>
+              </SignInSection>
             </Form>
           </FormContent>
         </FormWrap>
