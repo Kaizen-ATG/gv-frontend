@@ -2,7 +2,9 @@ import React from "react";
 import { Container, Label } from "./PointsBarElements";
 
 const PointsBar = (props) => {
-  const { bgcolor, completed,completedpercentage } = props;
+
+  const { bgcolor, completed, completedpercentage } = props;
+
 
   const fillerStyles = {
     height: "100%",

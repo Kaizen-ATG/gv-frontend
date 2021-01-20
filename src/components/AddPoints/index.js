@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CTAButton } from "../ButtonElement";
+import { Modal } from "../Modals/points-modal";
 import {
   Container,
   FormWrap,
@@ -19,8 +20,15 @@ const AddPoints = () => {
     setHover(!hover);
   };
 
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    setShowModal((prev) => !prev);
+  };
+
   return (
     <>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
       <Container>
         <FormWrap>
           <FormContent>
@@ -36,13 +44,13 @@ const AddPoints = () => {
               <FormInput type="code" required />
               <ButtonWrapper>
                 <CTAButton
-                  to="/points-success"
                   type="submit"
                   onMouseEnter={onHover}
                   onMouseLeave={onHover}
                   primary="true"
                   dark=""
                   btnborder="true"
+                  onClick={openModal}
                 >
                   Apply Code
                 </CTAButton>
