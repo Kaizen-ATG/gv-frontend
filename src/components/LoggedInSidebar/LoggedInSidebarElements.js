@@ -7,7 +7,7 @@ import { GoGift } from "react-icons/go";
 
 export const LgInSidebarContainer = styled.aside`
   position: fixed;
-  z-index: 999;
+  z-index: 998;
   width: 100%;
   height: 100%;
   background: #fff;
