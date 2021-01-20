@@ -52,9 +52,11 @@ const ProfileSection = (props) => {
       </PlayerGroup>
       <BtnWrapper>
         <Button
+
           to={{
             pathname: "/redeem",
             state: { totalpoints: props.gpoints },
+
           }}
           onMouseEnter={onHover}
           onMouseLeave={onHover}
