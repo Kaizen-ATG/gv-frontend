@@ -9,7 +9,7 @@ export const homeObjOne = {
     "Here’s your chance to help make a change in a better way while still earning points and getting a chance to some great Gigs in town or even other popular events.",
   buttonLabel: "Get started",
   imgStart: false,
-  img: "/images/characters/recycling.svg",
+  img: "/images/characters/recycling01.svg",
   alt: "img desc",
   dark: true,
   primary: true,

@@ -3,19 +3,20 @@ import { H2, H3, MediumText } from "../../styles/TextStyles";
 import { themes } from "../../styles/ColorStyles";
 
 export const SectionGroup = styled.div`
-  margin: 0px 0px 60px;
-  background: url("/images/waves/hero-wave01.svg");
-  background-size: cover;
-
-  display: grid;
   justify-content: center;
-  grid-template-rows: auto;
-  grid-gap: 20px;
-  position: relative;
-
+  /* 
+  display: grid; */
+  width: 100%;
+  max-width: 1100px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+  padding: 0 24px;
+  justify-content: center;
   @media (max-width: 640px) {
   }
 `;
+
 export const SectionTitle = styled(H2)`
   color: ${themes.light.text1};
   margin-bottom: 24px;
@@ -29,10 +30,10 @@ export const SectionTitle = styled(H2)`
 
 export const SubsectionGroup = styled.div`
   display: grid;
-  grid-template-columns: 360px 360px 360px;
+  grid-template-columns: 1fr 1fr;
 
   @media (max-width: 960px) {
-    grid-template-columns: 450px 450px;
+    grid-template-columns: 1fr 1fr;
   }
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -40,7 +41,7 @@ export const SubsectionGroup = styled.div`
 `;
 
 export const SubsectionTitle = styled(H3)`
-  font-weight: 400;
+  font-weight: 600;
 `;
 
 export const SubsectionContent = styled(MediumText)`
@@ -51,7 +52,6 @@ export const SubsectionContent = styled(MediumText)`
 export const SubsectionCol = styled.div`
   display: grid;
   grid-template-rows: auto;
-  grid-gap: 20px;
   padding-bottom: 60px;
 `;
 
@@ -63,4 +63,18 @@ export const Topline = styled.p`
   letter-spacing: 1.4px;
   text-transform: uppercase;
   margin-bottom: 16px;
+`;
+
+export const ImageContent = styled.img`
+  height: 400px;
+  margin-top: 60px;
+  @media (max-width: 450px) {
+    height: 320px;
+    margin-top: 10px;
+  }
+`;
+
+export const ImageWrapper = styled.div`
+  /* background: blue; */
+  text-align: center;
 `;
