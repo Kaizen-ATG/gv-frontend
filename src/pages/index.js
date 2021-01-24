@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Layout from "../components/layout/layout";
 import InfoSection from "../components/InfoSection";
 import { homeObjOne } from "../components/InfoSection/InfoData";
+import HowItWorksSection from "../components/HowItWorks";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +21,7 @@ const Home = () => {
         <Navbar toggle={toggle} />
         <HeroSection />
         <InfoSection {...homeObjOne} />
+        <HowItWorksSection />
       </Layout>
     </>
   );
