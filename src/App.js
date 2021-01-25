@@ -9,6 +9,11 @@ import Profile from "./pages/profile";
 import HowItWorks from "./pages/how-it-works";
 import RedeemSummary from "./pages/redeemsummary";
 import Redeem from "./pages/redeem";
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
+import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
+
+Amplify.configure(awsconfig);
 
 function App() {
   return (
@@ -29,4 +34,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);

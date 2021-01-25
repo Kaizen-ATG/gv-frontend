@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "gvfrontend256ecfd7": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

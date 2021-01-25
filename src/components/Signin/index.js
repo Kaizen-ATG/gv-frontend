@@ -16,17 +16,77 @@ import {
   SignInSection,
   NavLink,
 } from "./SigninElements";
+import { Auth } from "aws-amplify";
 
 const SignIn = () => {
+  const [signInDetails, setSignInDetails] = useState({
+    username: "",
+    password: "",
+  });
   const [hover, setHover] = useState(false);
-
   const onHover = () => {
     setHover(!hover);
   };
 
+  const handleSubmit = async (e) => {
+    const { username, password } = signInDetails;
+
+    console.log(e.target);
+    try {
+      const user = await Auth.signIn({
+        username,
+        password,
+      });
+      alert("Logged in");
+    } catch (error) {
+      console.log("error signing in", error);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    console.log(name, value);
+    setSignInDetails({
+      ...signInDetails,
+      [name]: value,
+    });
+  };
+
   return (
     <>
-      <Container>
+      <div>
+        <form onSubmit={(event) => handleSubmit(event)}>
+          <div class="container">
+            <label>Username : </label>
+            <input
+              onChange={handleChange}
+              type="text"
+              placeholder="Enter Username"
+              name="username"
+              required
+              value={signInDetails.username}
+            />
+            <label>Password : </label>
+            <input
+              onChange={handleChange}
+              type="password"
+              placeholder="Enter Password"
+              name="password"
+              required
+              value={signInDetails.password}
+            />
+            <button type="submit">Signin</button>
+            {/* <input type="checkbox" checked="checked" /> Remember me */}
+            <button type="button" class="cancelbtn">
+              {" "}
+              Cancel
+            </button>
+            {/* Forgot <a href="#"> password? </a> */}
+          </div>
+        </form>
+      </div>
+    </>
+    /* { <Container>
         <FormWrap>
           <Icon to="/">
             <img src="/images/logos/logo.svg" alt="logo" />
@@ -67,8 +127,8 @@ const SignIn = () => {
             </Form>
           </FormContent>
         </FormWrap>
-      </Container>
-    </>
+      </Container> }*/
+    // </>
   );
 };
 
