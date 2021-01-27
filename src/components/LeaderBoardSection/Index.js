@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
 import Cell from "../Cell";
-import staticdata from "../../data/staticdata.json";
 import { SectionCaption, SectionCellGroup } from "./LeaderboardElements";
-import { getUsers } from "../../utils/apiCalls.js"
+import { getUsers } from "../../utils/apiCalls.js";
+// import { useDispatch, useSelector } from "react-redux";
+// import { addUsers } from "../../redux/users.actions.js";
 
 const LeaderboardSection = () => {
-  const [users,setUsers]=useState();
+  const [users, setUsers] = useState();
+  // const getReduxUsers = useSelector(state => state.users.allUsers);
+  // const dispatch = useDispatch();
   useEffect(() => {
-    const getUsersList = () => {
-      const response = getUsers();
-      console.log(response);
-      setUsers(response);    
-    };
+    const getUsersList = async () => {
+      const response = await getUsers();
+      // dispatch(addUsers(response));
+      setUsers(response);
+    }
     getUsersList();
   }, []);
-  console.log(users);
   return (
     <>
       <SectionCaption>Leaderboard</SectionCaption>
       <SectionCellGroup>
-        {staticdata.cells.map((cell) => (
+        {users && users.map((user) => (
           <Cell
-            title={cell.title}
-            image={cell.image}
-            gpoints={cell.greenpoints}
-            cpoints={cell.carbonpoints}
+            title={user.UserName}
+            image="../../images/avatars/avatar08.svg"
+            gpoints="100"
+            cpoints="200"
           />
         ))}
       </SectionCellGroup>
