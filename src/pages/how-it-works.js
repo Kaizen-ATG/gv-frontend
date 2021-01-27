@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Layout from "../components/layout/layout";
 import LoggedInSidebar from "../components/LoggedInSidebar";
 import LoggedInNavbar from "../components/LoggedInNavbar";
-
 import HowItWorksSection from "../components/HowItWorks";
 
 const HowItWorks = () => {
