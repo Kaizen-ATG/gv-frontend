@@ -3,14 +3,16 @@
     {
       "key": 1,
       "title": "Roger",
-      "image": "../../images/avatars/avatar08.svg",
+      "image": "/images/avatars/avatar08.svg",
+      "gameicon": "/images/icons/rocking.svg",
       "greenpoints": 250,
       "carbonpoints": 490
     },
     {
       "key": 2,
       "title": "Jamie",
-      "image": "../images/avatars/avatar02.svg",
+      "image": "/images/avatars/avatar02.svg",
+      "gameicon": "/images/icons/fist.svg",
       "greenpoints": 210,
       "carbonpoints": 320
     },
@@ -18,6 +20,7 @@
       "key": 3,
       "title": "Beth",
       "image": "/images/avatars/avatar04.svg",
+      "gameicon": "/images/icons/fist.svg",
       "greenpoints": 190,
       "carbonpoints": 280
     },
@@ -25,6 +28,7 @@
       "key": 4,
       "title": "Pablo",
       "image": "/images/avatars/avatar07.svg",
+      "gameicon": "/images/icons/fist.svg",
       "greenpoints": 160,
       "carbonpoints": 220
     },
@@ -32,6 +36,7 @@
       "key": 5,
       "title": "Judith",
       "image": "/images/avatars/avatar03.svg",
+      "gameicon": "/images/icons/fist.svg",
       "greenpoints": 140,
       "carbonpoints": 210
     },
@@ -39,6 +44,7 @@
       "key": 6,
       "title": "Kath",
       "image": "/images/avatars/avatar06.svg",
+      "gameicon": "/images/icons/fist.svg",
       "greenpoints": 90,
       "carbonpoints": 160
     }

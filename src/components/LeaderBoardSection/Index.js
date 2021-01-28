@@ -14,6 +14,7 @@ const LeaderboardSection = () => {
             image={cell.image}
             gpoints={cell.greenpoints}
             cpoints={cell.carbonpoints}
+            gicon={cell.gameicon}
           />
         ))}
       </SectionCellGroup>
