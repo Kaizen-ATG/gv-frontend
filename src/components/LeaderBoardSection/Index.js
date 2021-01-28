@@ -23,10 +23,11 @@ const LeaderboardSection = () => {
       <SectionCellGroup>
         {users && users.map((user) => (
           <Cell
-            title={user.UserName}
-            image="../../images/avatars/avatar08.svg"
-            gpoints="100"
-            cpoints="200"
+            title={cell.title}
+            image={cell.image}
+            gpoints={cell.greenpoints}
+            cpoints={cell.carbonpoints}
+            gicon={cell.gameicon}
           />
         ))}
       </SectionCellGroup>

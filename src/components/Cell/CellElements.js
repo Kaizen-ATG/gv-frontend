@@ -5,7 +5,7 @@ import { BiCubeAlt } from "react-icons/bi";
 export const CellGroup = styled.div`
   margin: 0 20px auto;
   display: grid;
-  grid-template-columns: 60px auto;
+  grid-template-columns: 60px auto 60px;
   grid-gap: 24px;
   align-items: center;
   padding: 20px 0;
@@ -19,6 +19,14 @@ export const CellImage = styled.div`
   background-image: url(${(props) => props.image});
   background-size: 60px;
 `;
+
+export const CellIcon = styled.div`
+  width: 40px;
+  height: 40px;
+
+  background-image: url(${(props) => props.gameicon});
+`;
+
 export const CellTitle = styled.div`
   font-size: 20px;
   font-weight: 600;
