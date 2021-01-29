@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { Button } from "../ButtonElement";
+import { Button, CTAButton } from "../ButtonElement";
 import {
   ContentH1,
   Text,
   DealWrap,
   ImageWrapper,
   Container,
+  Information,
+  InfoContainer,
+  Reducedpoints,
   ButtonWrapper,
+  InfoIcon,
+  Question,
 } from "./RedeemSummaryElements";
 
 const RedeemSummarySection = (props) => {
@@ -25,6 +30,14 @@ const RedeemSummarySection = (props) => {
           />
           <ContentH1>{props.location.state.title}</ContentH1>
           <Text>{props.location.state.disc}</Text>
+          <InfoContainer>
+            <InfoIcon />
+            <Reducedpoints>30</Reducedpoints>
+            <Information>
+              Green points will be reduced. Your carbon free points remain.
+            </Information>
+          </InfoContainer>
+          <Question>Would you like to redeem this offer?</Question>
           <ButtonWrapper>
             <Button
               to="/redeem"
@@ -34,19 +47,17 @@ const RedeemSummarySection = (props) => {
               dark="true"
               btnborder="true"
             >
-              {" "}
               Take me back
             </Button>
-            <Button
-              to="/success"
+            <CTAButton
+              to="/deal-success"
               onMouseEnter={onHover}
               onMouseLeave={onHover}
               primary="true"
               dark=""
             >
-              {" "}
               Yes I want this
-            </Button>
+            </CTAButton>
           </ButtonWrapper>
         </DealWrap>
       </Container>

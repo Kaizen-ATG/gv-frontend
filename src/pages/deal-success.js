@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import DealSuccessSection from "../components/DealSuccess";
 import Layout from "../components/layout/layout";
 import LoggedInNavbar from "../components/LoggedInNavbar";
 import LoggedInSidebar from "../components/LoggedInSidebar";
-import PointsSummarySection from "../components/PointsSummary";
 
-const PointsSuccess = (props) => {
+const DealSuccess = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -15,10 +15,10 @@ const PointsSuccess = (props) => {
       <Layout>
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
         <LoggedInNavbar toggle={toggle} />
-        <PointsSummarySection />
+        <DealSuccessSection />
       </Layout>
     </>
   );
 };
 
-export default PointsSuccess;
+export default DealSuccess;
