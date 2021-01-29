@@ -1,6 +1,6 @@
 {
   "auth": {
-    "gvfrontend256ecfd7": {
+    "gvfrontend15ba146f15ba146f": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

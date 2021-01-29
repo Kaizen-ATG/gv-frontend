@@ -1,8 +1,6 @@
 {
-    "identityPoolName": "gvfrontend256ecfd7_identitypool_256ecfd7",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "gvfron256ecfd7",
-    "userPoolName": "gvfrontend256ecfd7_userpool_256ecfd7",
+    "resourceNameTruncated": "gvfron15ba146f",
+    "userPoolName": "gvfrontend15ba146f_userpool_15ba146f",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,11 +26,11 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "gvfron256ecfd7_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "gvfron15ba146f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "256ecfd7",
-    "resourceName": "gvfrontend256ecfd7",
-    "authSelections": "identityPoolAndUserPool",
+    "sharedId": "15ba146f",
+    "resourceName": "gvfrontend15ba146f15ba146f",
+    "authSelections": "userPoolOnly",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -45,12 +43,24 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "manual",
     "usernameAttributes": [
         "email"
     ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": "{}",
+    "hostedUI": true,
+    "hostedUIDomainName": "gvfrontend15ba146f-15ba146f",
+    "authProvidersUserPool": [],
+    "hostedUIProviderMeta": "[]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost/dashboard/\"],\"LogoutURLs\":[\"http://localhost/\"]}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
     "dependsOn": []
 }

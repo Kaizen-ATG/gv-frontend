@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-// import { withRouter, useHistory } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { withRouter, useHistory } from "react-router-dom";
 import { CTAButton } from "../ButtonElement";
 import { Auth } from "aws-amplify";
+import { useAppContext } from "../../libs/contextLib";
+
 import {
   Container,
   FormWrap,
@@ -19,14 +21,24 @@ import {
 } from "./SignupElements";
 
 const SignIn = (props) => {
+  //const { isAuthenticated } = useContext(useAppContext);
   // const [isAuthenticated, userHasAuthenticated] = useState(false);
   const [hover, setHover] = useState(false);
+  const { userHasAuthenticated } = useAppContext();
+
   const [signUpDetails, setSignUpDetails] = useState({
     username: "",
     email: "",
     password: "",
+    errors: {
+      cognito: null,
+      blankfield: false,
+      passwordmatch: false,
+    },
   });
-  // const [error, setError] = useState(null);
+
+  const [error, setError] = useState(null);
+  const history = useHistory();
   const onHover = () => {
     setHover(!hover);
   };
@@ -34,7 +46,6 @@ const SignIn = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { username, password, email } = signUpDetails;
-    const { history } = this.props;
 
     console.log(e.target);
     try {
@@ -47,13 +58,37 @@ const SignIn = (props) => {
           // other custom attributes
         },
       });
+
+      //POST request to add user to User DB
       console.log(user);
-      props.history.push("/signin");
-      // to do: handle what happens when user signsup successfully - do we redirect to dashboard?
     } catch (error) {
       // to do: what happens if there is an error when signing up? - you could render an error.
       // to do: conditionally render div in react - setError(error.message)
       console.log("error signing up:", error);
+    }
+    try {
+      const { user } = await Auth.signIn({
+        username,
+        password,
+      });
+      const { token } = useAppContext.data;
+      localStorage.setItem("token", token);
+      localStorage.getItem("token");
+      console.log("token", token);
+      // to do: handle what happens when user signsup successfully - do we redirect to dashboard?
+      userHasAuthenticated(true);
+
+      history.push("../dashboard");
+    } catch (error) {
+      // let err = null;
+      // !error.message ? (err = { message: error }) : (err = error);
+      // this.setState({
+      //   errors: {
+      //     ...this.state.errors,
+      //     cognito: err,
+      //   },
+      // });
+      console.log("error signing in", error);
     }
   };
 
@@ -109,7 +144,7 @@ const SignIn = (props) => {
                 value={signUpDetails.password}
               />
               <ButtonWrapper>
-                <button type="submit"> Submit </button>
+                <button type="submit"> Submit</button>
               </ButtonWrapper>
               <SignInSection>
                 <Text>Already have an account?</Text>
@@ -167,3 +202,4 @@ const SignIn = (props) => {
 };
 
 export default SignIn;
+//const { userHasAuthenticated } = useAppContext();

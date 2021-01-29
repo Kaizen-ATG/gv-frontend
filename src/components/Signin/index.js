@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { withRouter, useHistory } from "react-router-dom";
 import { CTAButton } from "../ButtonElement";
 import {
   Container,
@@ -17,8 +18,12 @@ import {
   NavLink,
 } from "./SigninElements";
 import { Auth } from "aws-amplify";
+import { useAppContext } from "../../libs/contextLib";
 
 const SignIn = () => {
+  const { userHasAuthenticated } = useAppContext();
+  const history = useHistory();
+
   const [signInDetails, setSignInDetails] = useState({
     username: "",
     password: "",
@@ -37,6 +42,12 @@ const SignIn = () => {
         username,
         password,
       });
+      userHasAuthenticated(true);
+      const { token } = useAppContext.data;
+      localStorage.setItem("token", token);
+      localStorage.getItem("token");
+      console.log("token", token);
+      history.push("../dashboard");
       alert("Logged in");
     } catch (error) {
       console.log("error signing in", error);
@@ -56,7 +67,7 @@ const SignIn = () => {
     <>
       <div>
         <form onSubmit={(event) => handleSubmit(event)}>
-          <div class="container">
+          <div className="container">
             <label>Username : </label>
             <input
               onChange={handleChange}
@@ -77,7 +88,7 @@ const SignIn = () => {
             />
             <button type="submit">Signin</button>
             {/* <input type="checkbox" checked="checked" /> Remember me */}
-            <button type="button" class="cancelbtn">
+            <button type="button" className="cancelbtn">
               {" "}
               Cancel
             </button>

@@ -7,7 +7,7 @@ import ProfileSection from "../components/ProfileSection";
 
 const Dashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  // create a  POST request using useEffect (check chat)
   const toggle = () => {
     setIsOpen(!isOpen);
   };
