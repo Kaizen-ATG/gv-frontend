@@ -34,5 +34,17 @@ The application can be accessed at
 
 http://localhost:3000
 
+## Dependencies
 
+`react-animations`
+`react-code-input`
+`react-router-dom`
+`react-icons`
+`react-animations`
+`react-scripts`
+`react-scroll`
+`react-spring`
+`react-verification-code-input`
+`styled-components`
+`web-vitals`
 
