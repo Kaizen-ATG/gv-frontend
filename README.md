@@ -20,6 +20,10 @@ The frontend portion of the application uses the following technology
 
 A responsive mobile first approach was used while developing the Greenvibe web app.
 
+## Mobile Mockups
+![alt text](https://github.com/Kaizen-ATG/gv-common/blob/main/mobile-mockups.png "Mobile mockups")
+
+
 ## To run the application locally
 
 Install [Node.js](https://nodejs.org/en/)
