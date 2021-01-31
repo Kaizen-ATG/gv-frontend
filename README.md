@@ -1,6 +1,6 @@
 ## Greenvibe - Frontend
 
-Greenvibe is a solution created by team Kaizen with the aim of encouraging people to become more environmentally and socially aware. The solution was built under the techreturners(link) Your Journey Into Tech prgramme. The corresponding backend readme can be found [here](https://github.com/Kaizen-ATG/gv-backend/blob/main/README.md)
+Greenvibe is a solution created by team Kaizen with the aim of encouraging people to become more environmentally and socially aware. The solution was built under the [techreturners](https://www.techreturners.com/programmes/your-return-to-tech/) Your Journey Into Tech prgramme. The corresponding backend readme can be found [here](https://github.com/Kaizen-ATG/gv-backend/blob/main/README.md)
 
 ## Technology Stack used:
 
