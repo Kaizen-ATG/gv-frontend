@@ -1,3 +1,5 @@
+![alt text](https://github.com/Kaizen-ATG/gv-common/blob/main/gv-logo.png "Green Vibe Logo")
+
 # Greenvibe - Frontend
 
 Greenvibe is a solution created by team Kaizen with the aim of encouraging people to become more environmentally and socially aware. The solution was built under the [techreturners](https://www.techreturners.com/programmes/your-return-to-tech/) Your Return To Tech prgramme. The corresponding backend readme can be found [here](https://github.com/Kaizen-ATG/gv-backend/blob/main/README.md).
