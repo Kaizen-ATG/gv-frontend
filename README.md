@@ -17,7 +17,7 @@ A responsive mobile first approach was used while developing the Greenvibe
 
 ## To run the application locally
 
-Install Node.js(link)
+Install [Node.js](https://nodejs.org/en/)
 
 npm install
 
