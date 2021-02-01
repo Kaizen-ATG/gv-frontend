@@ -47,7 +47,7 @@ const RedeemSummarySection = (props) => {
               dark="true"
               btnborder="true"
             >
-              Take me back
+              No, take me back
             </Button>
             <CTAButton
               to="/deal-success"
