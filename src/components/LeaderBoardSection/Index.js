@@ -19,8 +19,8 @@ const LeaderboardSection = () => {
             key={user.UserName}
             title={user.UserName}
             image="../../images/avatars/avatar08.svg"
-            gpoints="100"
-            cpoints="200"
+            gpoints={user.GreenPoints}
+            cpoints={user.CarbonPoints}
             gicon="../../images/icons/fist.svg"
           />
         ))}

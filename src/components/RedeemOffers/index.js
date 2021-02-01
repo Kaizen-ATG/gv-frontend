@@ -1,8 +1,9 @@
-import React ,{useState,useEffect} from "react";
-import redeemoffers from "../../data/redeemoffers.json";
+import React, { useState, useEffect } from "react";
+//import redeemoffers from "../../data/redeemoffers.json";
 import OffersCell from "../OffersCell";
 import PointsBar from "../PointsBar";
 import { getOffers } from "../../utils/apiCalls.js";
+import { useSelector } from "react-redux";
 import {
   SectionCaption,
   SectionCellGroup,
@@ -22,9 +23,9 @@ import {
 
 
 const barData = [{ bgcolor: "#0EA44B" }];
-
 const RedeemOffersSection = (props) => {
   const [offers, setOffers] = useState();
+  const userInfo = useSelector(state => state.users.userDetail);
   useEffect(() => {
     const getRedeemOffers = async () => {
       const response = await getOffers();
@@ -46,9 +47,9 @@ const RedeemOffersSection = (props) => {
             <PointsBar
               key={idx}
               bgcolor={item.bgcolor}
-              completed={props.location.state.totalpoints}
+              completed={userInfo && userInfo[0].GreenPoints}
               completedpercentage={
-                (props.location.state.totalpoints / 450) * 100
+                (userInfo && ((userInfo[0].GreenPoints / 450) * 100))
               }
             />
           ))}

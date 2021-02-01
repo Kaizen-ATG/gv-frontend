@@ -4,3 +4,9 @@ export const addUsers = (users) => {
         payload: users
     }
 }
+export const readUserDetail=(userDetail)=>{
+    return {
+        type: "readUserDetail",
+        payload: userDetail
+    }
+}

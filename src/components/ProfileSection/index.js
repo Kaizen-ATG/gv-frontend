@@ -54,9 +54,7 @@ const ProfileSection = (props) => {
         <Button
 
           to={{
-            pathname: "/redeem",
-            state: { totalpoints: props.gpoints },
-
+            pathname: "/redeem"
           }}
           onMouseEnter={onHover}
           onMouseLeave={onHover}
