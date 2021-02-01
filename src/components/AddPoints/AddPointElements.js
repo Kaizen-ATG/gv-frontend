@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { H1 } from "../../styles/TextStyles";
 import { themes } from "../../styles/ColorStyles";
+import { BiMessageAltError } from "react-icons/bi";
 
 export const Container = styled.div`
   /* display: grid; */
@@ -15,6 +16,16 @@ export const FormWrap = styled.div`
   /* height: 100px; */
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 450px) {
+  }
+`;
+
+export const ContentWrap = styled.div`
+  /* height: 100px; */
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
 
   @media screen and (max-width: 450px) {
   }
@@ -72,6 +83,7 @@ export const FormInput = styled.input`
   margin: 0px 32px 32px 32px;
   text-align: center;
   font-size: 24px;
+  text-transform: uppercase;
   border: 1px solid #556b2f;
   border-radius: 4px;
 `;
@@ -90,14 +102,77 @@ export const ImageWrapper = styled.img`
 `;
 
 export const ButtonWrapper = styled.div`
+  margin-top: 60px;
   display: flex;
-  justify-content: flex-end;
-  margin-right: 32px;
-
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 24px;
+  align-items: center;
+  justify-content: center;
   @media (max-width: 450px) {
-    display: flex;
     flex-direction: column;
+
     line-height: 1.5em;
-    margin-right: 0px;
+  }
+`;
+
+export const ApplyButton = styled.button`
+  border-radius: 24px;
+  background: #010101;
+  white-space: nowrap;
+  padding: 14px 48px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    border: 1px solid #010606;
+    color: #010606;
+  }
+`;
+
+export const InfoContainer = styled.div`
+  margin: 12px;
+  display: grid;
+  grid-template-columns: 20px auto;
+  /* flex-wrap: nowrap; */
+  align-items: center;
+  grid-gap: 8px;
+  padding: 16px;
+  background: #ffede6;
+  /* max-width: 550px; */
+`;
+
+export const InfoIcon = styled(BiMessageAltError)`
+  font-size: 20px;
+`;
+
+export const Information = styled.p`
+  font-size: 13px;
+  text-align: left;
+  color: red;
+`;
+
+export const Information1 = styled.p`
+  font-size: 13px;
+  text-align: center;
+`;
+
+export const ContentH1 = styled(H1)`
+  color: ${themes.light.text1};
+  text-align: center;
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  justify-self: center;
+  @media (max-width: 450px) {
+    font-size: 32px;
   }
 `;

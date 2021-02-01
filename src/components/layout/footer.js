@@ -6,7 +6,7 @@ import { themes } from "../../styles/ColorStyles";
 const Footer = () => {
   return (
     <Wrapper>
-      <Title>TechReturners 2020</Title>
+      <Title>TechReturners 2021</Title>
     </Wrapper>
   );
 };
