@@ -25,8 +25,8 @@ const RedeemSummarySection = (props) => {
       <Container>
         <DealWrap>
           <ImageWrapper
-            src="/images/Retailers/starbucks.svg"
-            alt="Starbucks logo"
+            src={"/images/Retailers/"+props.location.state.title+".svg"}
+            alt="Deal logo"
           />
           <ContentH1>{props.location.state.title}</ContentH1>
           <Text>{props.location.state.disc}</Text>
