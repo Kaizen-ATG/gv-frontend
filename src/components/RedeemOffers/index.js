@@ -1,7 +1,8 @@
-import React from "react";
+import React ,{useState,useEffect} from "react";
 import redeemoffers from "../../data/redeemoffers.json";
 import OffersCell from "../OffersCell";
 import PointsBar from "../PointsBar";
+import { getOffers } from "../../utils/apiCalls.js";
 import {
   SectionCaption,
   SectionCellGroup,
@@ -20,10 +21,17 @@ import {
 } from "./RedeemElements";
 
 
-const barData = [{ bgcolor: "#0EA44B"}];
-
+const barData = [{ bgcolor: "#0EA44B" }];
 
 const RedeemOffersSection = (props) => {
+  const [offers, setOffers] = useState();
+  useEffect(() => {
+    const getRedeemOffers = async () => {
+      const response = await getOffers();
+      setOffers(response);
+    }
+    getRedeemOffers();
+  }, []);
   return (
     <>
       <Container>
@@ -39,11 +47,9 @@ const RedeemOffersSection = (props) => {
               key={idx}
               bgcolor={item.bgcolor}
               completed={props.location.state.totalpoints}
-
               completedpercentage={
                 (props.location.state.totalpoints / 450) * 100
               }
-
             />
           ))}
         </BarContainer>
@@ -61,13 +67,13 @@ const RedeemOffersSection = (props) => {
       </Container>
       <SectionCaption>Online and In Store Offers</SectionCaption>
       <SectionCellGroup>
-        {redeemoffers.cells.map((cell) => (
+        {offers && offers.map((offer) => (
           <OffersCell
-            title={cell.title}
-            image={cell.image}
-            disc={cell.discount}
-            cpoints={cell.carbonpoints}
-            dest={cell.destination}
+            title={offer.setOffers}
+            image="/images/retailers/starbucks.svg"
+            disc={offer.Description}
+            //cpoints={cell.carbonpoints}
+            dest="offersummary"
           />
         ))}
       </SectionCellGroup>
