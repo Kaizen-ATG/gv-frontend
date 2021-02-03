@@ -3,6 +3,7 @@ import Home from "./pages";
 import SigninPage from "./pages/signin";
 import SignupPage from "./pages/signup";
 import Dashboard from "./pages/dashboard";
+import AdminDashboard from "./pages/admindashboard";
 import DealSuccess from "./pages/deal-success";
 import AddPoints from "./pages/addPoints";
 import Profile from "./pages/profile";
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signin" component={SigninPage} exact />
         <Route path="/signup" component={SignupPage} exact />
         <Route path="/dashboard" component={Dashboard} exact />
+        <Route path="/admindashboard" component={AdminDashboard} exact />
         <Route path="/how-it-works" component={HowItWorks} exact />
         <Route path="/addpoints" component={AddPoints} exact />
         <Route path="/profile" component={Profile} exact />
