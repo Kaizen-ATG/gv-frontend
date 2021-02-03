@@ -8,23 +8,25 @@ import { getUsers, getUser } from "../utils/apiCalls.js";
 import { useDispatch, useSelector } from "react-redux";
 import { addUsers, readUserDetail } from "../redux/users.actions.js";
 
-
 const Dashboard = () => {
   const dispatch = useDispatch();
+
+  const isAdmin = useSelector((state) => state.users.admin);
+
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const getUsersList = async () => {
       const response = await getUsers();
       dispatch(addUsers(response));
-    }
+    };
     const getUserDetails = async () => {
       const user = await getUser();
       dispatch(readUserDetail(user));
-    }
+    };
     getUsersList();
     getUserDetails();
   }, []);
-  const userInfo = useSelector(state => state.users.userDetail);
+  const userInfo = useSelector((state) => state.users.userDetail);
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -33,16 +35,17 @@ const Dashboard = () => {
       <Layout>
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
         <LoggedInNavbar toggle={toggle} />
-        {userInfo && userInfo.map((info) => (
-          <ProfileSection
-            gpoints={info.GreenPoints}
-            cpoints={info.CarbonPoints}
-            text={"Hello " + info.UserName}
-            note="Here’s a look at your score this week"
-            greenweekpoints={info.WeekGP}
-            carbonweekpoints={info.WeekCP}
-          />
-        ))}
+        {userInfo &&
+          userInfo.map((info) => (
+            <ProfileSection
+              gpoints={info.GreenPoints}
+              cpoints={info.CarbonPoints}
+              text={"Hello " + info.UserName}
+              note="Here’s a look at your score this week"
+              greenweekpoints={info.WeekGP}
+              carbonweekpoints={info.WeekCP}
+            />
+          ))}
         <LeaderboardSection />
       </Layout>
     </>
