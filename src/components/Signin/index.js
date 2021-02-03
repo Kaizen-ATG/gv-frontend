@@ -22,7 +22,6 @@ import {
 } from "./SigninElements";
 
 const SignIn = () => {
-  const { userHasAuthenticated } = useAppContext();
   const history = useHistory();
 
   const [signInDetails, setSignInDetails] = useState({
@@ -49,9 +48,7 @@ const SignIn = () => {
       console.log("USER", user);
       const { idToken } = user.signInUserSession;
       localStorage.setItem("gvToken", JSON.stringify(idToken));
-
-      userHasAuthenticated(true);
-      history.push("../dashboard");
+      window.location.href = "http://localhost:3000/dashboard";
     } catch (error) {
       console.log("error signing in", error);
     }

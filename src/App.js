@@ -3,7 +3,8 @@ import Home from "./pages";
 import SigninPage from "./pages/signin";
 import SignupPage from "./pages/signup";
 import Dashboard from "./pages/dashboard";
-import PointsSuccess from "./pages/points-success";
+import AdminDashboard from "./pages/admindashboard";
+import DealSuccess from "./pages/deal-success";
 import AddPoints from "./pages/addPoints";
 import Profile from "./pages/profile";
 import HowItWorks from "./pages/how-it-works";
@@ -35,16 +36,14 @@ function App() {
       console.log(typeof token, token);
       if (token) {
         const decodedToken = jwtDecode(token);
-        console.log(decodedToken["cognito:groups"][0]);
-        if (decodedToken["cognito:groups"][0]) {
-          dispatch(isAdmin(true));
-        }
+        //console.log(decodedToken["cognito:groups"][0]);
+        // if (decodedToken["cognito:groups"][0]) {
+        //   dispatch(isAdmin(true));
+        // }
 
         // if user is Admin: what do we want to do wuth that info?
         // eg: Admin only screen (Joe)
       }
-
-      userHasAuthenticated(true);
     } catch (e) {
       if (e !== "No current user") {
         alert(e);
@@ -56,26 +55,21 @@ function App() {
 
   console.log(isAuthenticated, localStorage.gvToken);
   return (
-    !isAuthenticating && (
-      <Router>
-        <Switch>
-          <AppContext.Provider
-            value={{ isAuthenticated, userHasAuthenticated }}
-          >
-            <Route path="/" component={Home} exact />
-            <Route path="/signin" component={SigninPage} exact />
-            <Route path="/signup" component={SignupPage} exact />
-            <Route path="/dashboard" component={Dashboard} exact />
-            <Route path="/how-it-works" component={HowItWorks} exact />
-            <Route path="/addpoints" component={AddPoints} exact />
-            <Route path="/profile" component={Profile} exact />
-            <Route path="/redeem" component={Redeem} exact />
-            <Route path="/redeem-summary" component={RedeemSummary} exact />
-            <Route path="/points-success" component={PointsSuccess} exact />
-          </AppContext.Provider>
-        </Switch>
-      </Router>
-    )
+    <Router>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/signin" component={SigninPage} exact />
+        <Route path="/signup" component={SignupPage} exact />
+        <Route path="/dashboard" component={Dashboard} exact />
+        <Route path="/admindashboard" component={AdminDashboard} exact />
+        <Route path="/how-it-works" component={HowItWorks} exact />
+        <Route path="/addpoints" component={AddPoints} exact />
+        <Route path="/profile" component={Profile} exact />
+        <Route path="/redeem" component={Redeem} exact />
+        <Route path="/redeem-summary" component={RedeemSummary} exact />
+        <Route path="/deal-success" component={DealSuccess} exact />
+      </Switch>
+    </Router>
   );
 }
 

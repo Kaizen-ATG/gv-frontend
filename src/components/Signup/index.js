@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { withRouter, useHistory } from "react-router-dom";
 import { CTAButton } from "../ButtonElement";
 import { Auth } from "aws-amplify";
-import { useAppContext } from "../../libs/contextLib";
 import { saveUser } from "../../utils/apiCalls";
 
 import {
@@ -25,7 +24,6 @@ const SignIn = (props) => {
   //const { isAuthenticated } = useContext(useAppContext);
   // const [isAuthenticated, userHasAuthenticated] = useState(false);
   const [hover, setHover] = useState(false);
-  const { userHasAuthenticated } = useAppContext();
 
   const [signUpDetails, setSignUpDetails] = useState({
     username: "",

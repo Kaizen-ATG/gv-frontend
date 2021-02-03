@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Layout from "../components/layout/layout";
+import LeaderboardSection from "../components/LeaderBoardSection/Index";
 import LoggedInNavbar from "../components/LoggedInNavbar";
 import LoggedInSidebar from "../components/LoggedInSidebar";
-import PointsSummarySection from "../components/PointsSummary";
+import AdminProfileSection from "../components/AdminProfileSection";
 
-const PointsSuccess = (props) => {
+const AdminDashboard = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
@@ -15,10 +16,10 @@ const PointsSuccess = (props) => {
       <Layout>
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
         <LoggedInNavbar toggle={toggle} />
-        <PointsSummarySection />
+        <AdminProfileSection />
       </Layout>
     </>
   );
 };
 
-export default PointsSuccess;
+export default AdminDashboard;

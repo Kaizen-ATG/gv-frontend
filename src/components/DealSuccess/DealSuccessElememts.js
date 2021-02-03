@@ -1,15 +1,12 @@
 import styled, { keyframes } from "styled-components";
-import { H1 } from "../../styles/TextStyles";
+import { H1, H3 } from "../../styles/TextStyles";
 import { themes } from "../../styles/ColorStyles";
-import { AiOutlineInfoCircle } from "react-icons/ai";
+import { MdContentCopy } from "react-icons/md";
 import { tada } from "react-animations";
 
 const tadaAnimation = keyframes`${tada}`;
 
 export const Container = styled.div`
-  display: flex;
-
-  justify-content: center;
   margin-top: 60px;
   margin-bottom: 60px;
 
@@ -18,10 +15,9 @@ export const Container = styled.div`
   }
 `;
 
-export const DealWrap = styled.div`
+export const ContentWrap = styled.div`
   /* height: 100px; */
   display: grid;
-
   flex-direction: column;
   justify-items: center;
   text-align: center;
@@ -40,47 +36,20 @@ export const ContentH1 = styled(H1)`
   }
 `;
 
-export const ContentButton = styled.button`
-  background: #010101;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 24px;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-`;
-
 export const Text = styled.p`
   font-size: 13px;
   margin-top: 20px;
 `;
 
-export const Information = styled.p`
-  font-size: 13px;
-  text-align: left;
-`;
-
-export const Question = styled.p`
-  font-size: 16px;
-  text-align: left;
-  font-weight: 600;
-`;
-
-export const Reducedpoints = styled.p`
-  font-size: 16px;
-  font-weight: 600;
-`;
-
 export const ImageWrapper = styled.img`
-  height: 180px;
   animation: 0.7s ${tadaAnimation};
 
   @media (max-width: 450px) {
-    height: 120px;
+    height: 180px;
   }
 `;
 
-export const ButtonWrapper = styled.div`
+export const BtnWrapper = styled.div`
   display: grid;
   grid-template-columns: 200px 200px;
   grid-gap: 20px;
@@ -89,23 +58,27 @@ export const ButtonWrapper = styled.div`
   @media (max-width: 450px) {
     display: flex;
     flex-direction: column;
-    min-width: 360px;
-    padding: 0 18px;
+    padding: 0 32px;
     line-height: 1.5em;
   }
 `;
 
-export const InfoContainer = styled.div`
-  margin: 24px 32px;
-  display: flex;
-  /* flex-wrap: nowrap; */
+export const CodeTextContainer = styled.div`
+  display: grid;
+  grid-template-columns: 180px 20px;
+  justify-self: center;
   align-items: center;
   grid-gap: 8px;
-  background: beige;
-  padding: 24px 16px;
-  max-width: 550px;
+  margin-top: 24px;
 `;
 
-export const InfoIcon = styled(AiOutlineInfoCircle)`
+export const CodeText = styled(H3)`
+  color: ${themes.light.text1};
+  border: 1px solid black;
+  padding: 8px 12px;
+`;
+
+export const CopyCode = styled(MdContentCopy)`
+  margin-left: 8px;
   font-size: 20px;
 `;

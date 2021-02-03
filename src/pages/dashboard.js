@@ -4,9 +4,9 @@ import LeaderboardSection from "../components/LeaderBoardSection/Index";
 import LoggedInNavbar from "../components/LoggedInNavbar";
 import LoggedInSidebar from "../components/LoggedInSidebar";
 import ProfileSection from "../components/ProfileSection";
-import { getUsers } from "../utils/apiCalls.js";
+import { getUsers, getUser } from "../utils/apiCalls.js";
 import { useDispatch, useSelector } from "react-redux";
-import { addUsers } from "../redux/users.actions.js";
+import { addUsers, readUserDetail } from "../redux/users.actions.js";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -19,8 +19,14 @@ const Dashboard = () => {
       const response = await getUsers();
       dispatch(addUsers(response));
     };
+    const getUserDetails = async () => {
+      const user = await getUser();
+      dispatch(readUserDetail(user));
+    };
     getUsersList();
+    getUserDetails();
   }, []);
+  const userInfo = useSelector((state) => state.users.userDetail);
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -29,15 +35,18 @@ const Dashboard = () => {
       <Layout>
         <LoggedInSidebar isOpen={isOpen} toggle={toggle} />
         <LoggedInNavbar toggle={toggle} />
-        <ProfileSection
-          gpoints="120"
-          cpoints="160"
-          text="Hello Stephany"
-          note="Here’s a look at your score this week"
-          greenweekpoints="10"
-          carbonweekpoints="20"
-        />
-        {isAdmin && <LeaderboardSection />}
+        {userInfo &&
+          userInfo.map((info) => (
+            <ProfileSection
+              gpoints={info.GreenPoints}
+              cpoints={info.CarbonPoints}
+              text={"Hello " + info.UserName}
+              note="Here’s a look at your score this week"
+              greenweekpoints={info.WeekGP}
+              carbonweekpoints={info.WeekCP}
+            />
+          ))}
+        <LeaderboardSection />
       </Layout>
     </>
   );

@@ -10,3 +10,10 @@ export const isAdmin = (toggleAdmin) => {
     payload: toggleAdmin,
   };
 };
+
+export const readUserDetail = (userDetail) => {
+  return {
+    type: "readUserDetail",
+    payload: userDetail,
+  };
+};
