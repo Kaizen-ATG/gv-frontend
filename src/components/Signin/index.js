@@ -45,10 +45,11 @@ const SignIn = () => {
         password,
       });
 
-      console.log("USER", user);
+      // console.log("USER", user);
       const { idToken } = user.signInUserSession;
       localStorage.setItem("gvToken", JSON.stringify(idToken));
-      window.location.href = "http://localhost:3000/dashboard";
+      console.log(idToken);
+      history.push("../dashboard");
     } catch (error) {
       console.log("error signing in", error);
     }
@@ -65,13 +66,13 @@ const SignIn = () => {
 
   return (
     <>
-      <Container>
+      {/* <Container>
         <FormWrap>
           <Icon to="/">
             <img src="/images/logos/logo.svg" alt="logo" />
           </Icon>
           <FormContent>
-            <Form onSubmit={(event) => handleSubmit(event)} action="#">
+            <Form onSubmit={(event) => handleSubmit(event)}>
               <ImageWrapper
                 src="/images/elements/sign-in.svg"
                 alt="enter code"
@@ -89,41 +90,41 @@ const SignIn = () => {
               />
               <FormLabel htmlFor="for">Password</FormLabel>
               <FormInput type="password" required />
-              <div>
-                <form onSubmit={(event) => handleSubmit(event)}>
-                  <div className="container">
-                    <label>Username : </label>
-                    <input
-                      onChange={handleChange}
-                      type="text"
-                      placeholder="Enter Username"
-                      name="username"
-                      required
-                      value={signInDetails.username}
-                    />
-                    <label>Password : </label>
-                    <input
-                      onChange={handleChange}
-                      type="password"
-                      placeholder="Enter Password"
-                      name="password"
-                      required
-                      value={signInDetails.password}
-                    />
-                    <button type="submit">Signin</button>
-                    {/* <input type="checkbox" checked="checked" /> Remember me */}
-                    <button type="button" className="cancelbtn">
-                      {" "}
-                      Cancel
-                    </button>
-                    {/* Forgot <a href="#"> password? </a> */}
-                  </div>
-                </form>
-              </div>
+              <div> */}
+      <form onSubmit={(event) => handleSubmit(event)}>
+        <div className="container">
+          <label>Username : </label>
+          <input
+            onChange={handleChange}
+            type="text"
+            placeholder="Enter Username"
+            name="username"
+            required
+            value={signInDetails.username}
+          />
+          <label>Password : </label>
+          <input
+            onChange={handleChange}
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            required
+            value={signInDetails.password}
+          />
+          <button type="submit">Signin</button>
+          {/* <input type="checkbox" checked="checked" /> Remember me */}
+          <button type="button" className="cancelbtn">
+            {" "}
+            Cancel
+          </button>
+          {/* Forgot <a href="#"> password? </a> */}
+        </div>
+      </form>
+      {/* </div>
             </Form>
           </FormContent>
         </FormWrap>
-      </Container>
+      </Container> */}
     </>
 
     /* { <Container>

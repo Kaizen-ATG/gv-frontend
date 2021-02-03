@@ -32,8 +32,8 @@ function App() {
   async function onLoad() {
     try {
       const token = localStorage.gvToken;
-      console.log("token ====", token);
-      console.log(typeof token, token);
+      //console.log("token ====", token);
+      //console.log(typeof token, token);
       if (token) {
         const decodedToken = jwtDecode(token);
         //console.log(decodedToken["cognito:groups"][0]);
@@ -53,7 +53,7 @@ function App() {
     setIsAuthenticating(false);
   }
 
-  console.log(isAuthenticated, localStorage.gvToken);
+  //console.log(isAuthenticated, localStorage.gvToken);
   return (
     <Router>
       <Switch>
