@@ -23,6 +23,8 @@ A responsive mobile first approach was used while developing the Greenvibe web a
 ## Mobile Mockups
 ![alt text](https://github.com/Kaizen-ATG/gv-common/blob/main/mobile-mockups.png "Mobile mockups")
 
+## Desktop Mockup
+![alt text](https://github.com/Kaizen-ATG/gv-common/blob/main/desktop-mockup.png "Desktop mockup")
 
 ## To run the application locally
 
