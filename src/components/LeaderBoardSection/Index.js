@@ -10,14 +10,14 @@ const LeaderboardSection = () => {
     <>
       <SectionCaption>Leaderboard</SectionCaption>
       <SectionCellGroup>
-        {reduxUsers && reduxUsers.map((user) => (
+        {reduxUsers && reduxUsers.map((user, index) => (
           <Cell
             key={user.UserName}
             title={user.UserName}
-            image={'https://greenvibe.s3.eu-west-2.amazonaws.com/images/avatars/'+user.UserName+'.svg'}
+            image={'https://greenvibe.s3.eu-west-2.amazonaws.com/images/avatars/' + user.UserName + '.svg'}
             gpoints={user.GreenPoints}
             cpoints={user.CarbonPoints}
-            gicon="../../images/icons/fist.svg"
+            gicon={index == 0 ? "../../images/icons/rocking.svg" : "../../images/icons/fist.svg"}
           />
         ))}
       </SectionCellGroup>
