@@ -59,7 +59,9 @@ const SignIn = (props) => {
       });
 
       //POST request to add user to User DB
-
+      const { idToken } = user.signInUserSession;
+      localStorage.setItem("gvToken", JSON.stringify(idToken));
+      console.log(idToken);
       const userid = Object.keys(user.storage)[0].split(".")[2];
       //console.log(Object.keys(user.storage)[0]);
 
@@ -72,7 +74,7 @@ const SignIn = (props) => {
       console.log("error signing up:", error);
     }
 
-    history.push("../signin");
+    history.push("../dashboard");
   };
 
   const handleChange = (event) => {

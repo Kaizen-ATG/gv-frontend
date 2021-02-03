@@ -32,7 +32,7 @@ function App() {
   async function onLoad() {
     try {
       const token = localStorage.gvToken;
-      //console.log("token ====", token);
+      console.log("token ====", token);
       //console.log(typeof token, token);
       if (token) {
         const decodedToken = jwtDecode(token);

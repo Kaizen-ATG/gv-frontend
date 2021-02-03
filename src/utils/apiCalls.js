@@ -44,3 +44,13 @@ export const getUser = async () => {
     console.log(error);
   }
 };
+export const addUserPoints = (request) => {
+  try {
+    console.log("success");
+    console.log(request);
+    const { postData } = axios.post(`${BASE_URL}/saveuserpoints`, request);
+    return postData;
+  } catch (error) {
+    console.log(error);
+  }
+};
