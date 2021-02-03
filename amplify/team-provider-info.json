@@ -1,0 +1,21 @@
+{
+  "devtwo": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gvfrontend-devtwo-104559-authRole",
+      "UnauthRoleArn": "arn:aws:iam::712357894002:role/amplify-gvfrontend-devtwo-104559-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::712357894002:role/amplify-gvfrontend-devtwo-104559-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-gvfrontend-devtwo-104559-deployment",
+      "UnauthRoleName": "amplify-gvfrontend-devtwo-104559-unauthRole",
+      "StackName": "amplify-gvfrontend-devtwo-104559",
+      "StackId": "arn:aws:cloudformation:eu-west-2:712357894002:stack/amplify-gvfrontend-devtwo-104559/dbfe9180-6543-11eb-b9c3-02058636b1d6",
+      "AmplifyAppId": "d36r2je2yqdo2"
+    },
+    "categories": {
+      "auth": {
+        "gvfrontend64de3f3964de3f39": {},
+        "userPoolGroups": {}
+      }
+    }
+  }
+}

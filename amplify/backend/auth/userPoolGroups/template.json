@@ -1,0 +1,68 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "authgvfrontend64de3f3964de3f39UserPoolId": {
+            "Type": "String",
+            "Default": "authgvfrontend64de3f3964de3f39UserPoolId"
+        },
+        
+        "authgvfrontend64de3f3964de3f39AppClientID": {
+            "Type": "String",
+            "Default": "authgvfrontend64de3f3964de3f39AppClientID"
+        },
+        "authgvfrontend64de3f3964de3f39AppClientIDWeb": {
+            "Type": "String",
+            "Default": "authgvfrontend64de3f3964de3f39AppClientIDWeb"
+        },
+        "AuthRoleArn": {
+            "Type": "String"
+        },
+        "UnauthRoleArn": {
+            "Type": "String"
+        },
+        "env": {
+            "Type": "String"
+        }
+    },
+    "Conditions": {
+        "ShouldNotCreateEnvResources": {
+            "Fn::Equals": [
+                {
+                    "Ref": "env"
+                },
+                "NONE"
+            ]
+        }
+    },
+    "Resources": {
+    
+        "GreenvibeUserPoolGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "GreenvibeUserPool",
+              "Precedence" : 1,
+              
+              "UserPoolId" : {
+                "Ref": "authgvfrontend64de3f3964de3f39UserPoolId"
+              } 
+            }
+        },
+        
+    
+        "GreenvibeUserPoolGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "GreenvibeUserPool",
+              "Precedence" : 2,
+              
+              "UserPoolId" : {
+                "Ref": "authgvfrontend64de3f3964de3f39UserPoolId"
+              } 
+            }
+        },
+        
+    
+    
+    },
+    
+}

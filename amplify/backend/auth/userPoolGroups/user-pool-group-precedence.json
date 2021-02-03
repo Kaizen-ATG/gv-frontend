@@ -1,0 +1,10 @@
+[
+    {
+        "groupName": "GreenvibeUserPool",
+        "precedence": 1
+    },
+    {
+        "groupName": "GreenvibeUserPool",
+        "precedence": 2
+    }
+]

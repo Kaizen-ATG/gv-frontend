@@ -5,19 +5,20 @@ import LoggedInNavbar from "../components/LoggedInNavbar";
 import LoggedInSidebar from "../components/LoggedInSidebar";
 import ProfileSection from "../components/ProfileSection";
 import { getUsers } from "../utils/apiCalls.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUsers } from "../redux/users.actions.js";
-
 
 const Dashboard = () => {
   const dispatch = useDispatch();
+
+  const isAdmin = useSelector((state) => state.users.admin);
 
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const getUsersList = async () => {
       const response = await getUsers();
       dispatch(addUsers(response));
-    }
+    };
     getUsersList();
   }, []);
   const toggle = () => {
@@ -36,7 +37,7 @@ const Dashboard = () => {
           greenweekpoints="10"
           carbonweekpoints="20"
         />
-        <LeaderboardSection />
+        {isAdmin && <LeaderboardSection />}
       </Layout>
     </>
   );
