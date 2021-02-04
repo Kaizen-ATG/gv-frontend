@@ -73,7 +73,7 @@ const RedeemOffersSection = (props) => {
           <OffersCell
             title={offer.Dealtype}
             key={offer.Dealtype}
-            image={'/images/Retailers/'+offer.Dealtype+'.svg'}
+            image={'../../images/Retailers/'+offer.Dealtype+'.svg'}
             disc={offer.Description}
             dest="offersummary"
           />
