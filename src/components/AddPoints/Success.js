@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../ButtonElement";
+import lottie from "lottie-web";
+import animationData from "./thumbs-up.json";
 import {
   Container,
   ContentH1,
   ButtonWrapper,
-  ImageWrapper,
   ContentWrap,
   Information1,
 } from "./AddPointElements";
 
 const Success = () => {
+  const container = useRef(null);
+
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: "svg",
+      loop: false,
+      autoplay: true,
+      animationData: animationData,
+    });
+  }, []);
+
   const [hover, setHover] = useState(false);
 
   const onHover = () => {
@@ -19,12 +32,11 @@ const Success = () => {
     <>
       <Container>
         <ContentWrap>
-          <ImageWrapper
-            src="/images/elements/success.svg"
-            alt="enter code"
-            height="100px"
-            width="100px"
-          />
+          <div
+            className="container"
+            ref={container}
+            style={{ width: 300, margin: "0 auto" }}
+          ></div>
           <ContentH1>Sweet!</ContentH1>
           <Information1>You just earned 30 points</Information1>
           <ButtonWrapper>
