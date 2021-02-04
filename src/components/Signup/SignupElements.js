@@ -125,17 +125,27 @@ export const NavLink = styled(LinkR)`
   @media screen and (max-width: 450px) {
   }
 `;
-export const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 24px;
+export const ButtonWrapper = styled.button`
+border-radius: 24px;
+background: #010101;
+white-space: nowrap;
+padding: 14px 48px;
+color: #fff;
+font-size: 16px;
+outline: none;
+border: 1px solid black;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: all 0.2s ease-in-out;
+cursor: pointer;
 
-  @media (max-width: 450px) {
-    display: flex;
-    flex-direction: column;
-
-    line-height: 1.5em;
-  }
+&:hover {
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+  border: 1px solid #010606;
+  color: #010606;
+}
 `;
 
 export const SignInSection = styled.div`

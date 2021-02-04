@@ -31,7 +31,7 @@ const ProfileSection = (props) => {
     <ProfileWrapper>
       <PlayerGroup>
         <SectionText>{props.text}</SectionText>
-        <PlayerAvatar src="/images/avatars/avatar05.svg" />
+        <PlayerAvatar src={'https://greenvibe.s3.eu-west-2.amazonaws.com/images/avatars/' + props.username + '.svg'} />
         <PlayerPoints>
           <> {<LeafIcon />}</>
           <Greenli>{props.gpoints}</Greenli>
