@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://eumdh35gzh.execute-api.eu-west-2.amazonaws.com";
+const BASE_URL = "https://2y4epjc4bh.execute-api.eu-west-2.amazonaws.com";
 export const getUsers = async () => {
   try {
     const { data } = await axios.get(`${BASE_URL}/users`);
@@ -18,7 +18,7 @@ export const getOffers = async () => {
   }
 };
 
-export const saveUser = async (name,useremail) => {
+export const saveUser = async (name, useremail) => {
   try {
     console.log("Trying save user");
     const postData = {
@@ -45,8 +45,6 @@ export const getUser = async (email) => {
 };
 export const addUserPoints = (request) => {
   try {
-    console.log("success");
-    console.log(request);
     const { postData } = axios.post(`${BASE_URL}/saveuserpoints`, request);
     return postData;
   } catch (error) {

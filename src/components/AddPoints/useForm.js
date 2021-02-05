@@ -26,13 +26,13 @@ const useForm = (callback, validate) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      let points = values.code % 10 * 6;
+      let points = values.code % 10 * 10;
       const postData = {
-        userid: userInfo[0].userid,
-        greenpoints: userInfo[0].greenpoints+points,
-        carbonpoints:userInfo[0].carbonpoints+points,
-        weekGP:userInfo[0].weekGP+points,
-        weekCP:userInfo[0].weekCP+points
+        userid: userInfo[0].UserId,
+        greenpoints: userInfo[0].GreenPoints+points,
+        carbonpoints:userInfo[0].CarbonPoints+points,
+        weekGP:userInfo[0].WeekGP+points,
+        weekCP:userInfo[0].WeekCP+points
       }
       addUserPoints(postData);
       callback();
