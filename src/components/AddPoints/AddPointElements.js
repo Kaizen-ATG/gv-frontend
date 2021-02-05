@@ -48,7 +48,6 @@ export const Form = styled.form`
   z-index: 1;
   display: flex;
   flex-direction: column;
-
   grid-gap: 20px;
 
   margin: 0 auto;
@@ -102,15 +101,30 @@ export const ImageWrapper = styled.img`
 `;
 
 export const ButtonWrapper = styled.div`
-  margin-top: 60px;
+  /* margin-top: 60px; */
   display: flex;
   grid-template-columns: 1fr 1fr;
   grid-gap: 24px;
   align-items: center;
   justify-content: center;
   @media (max-width: 450px) {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
 
+    line-height: 1.5em;
+  }
+`;
+
+export const BtnWrapper = styled.div`
+  margin-top: 60px;
+  display: flex;
+  grid-gap: 24px;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 450px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 40px 24px 0;
     line-height: 1.5em;
   }
 `;
