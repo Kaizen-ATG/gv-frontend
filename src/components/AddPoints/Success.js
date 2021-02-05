@@ -5,7 +5,7 @@ import animationData from "./thumbs-up.json";
 import {
   Container,
   ContentH1,
-  ButtonWrapper,
+  BtnWrapper,
   ContentWrap,
   Information1,
 } from "./AddPointElements";
@@ -39,7 +39,7 @@ const Success = () => {
           ></div>
           <ContentH1>Sweet!</ContentH1>
           <Information1>You just earned 30 points</Information1>
-          <ButtonWrapper>
+          <BtnWrapper>
             <Button
               to="/dashboard"
               onMouseEnter={onHover}
@@ -59,7 +59,7 @@ const Success = () => {
             >
               Redeem points
             </Button>
-          </ButtonWrapper>
+          </BtnWrapper>
         </ContentWrap>
       </Container>
     </>

@@ -33,7 +33,7 @@ const LoggedInNavbar = ({ toggle }) => {
     <>
       <LgInNav scrollNav={scrollNav}>
         <LgInNavbarContainer>
-          <LgInNavLogo to="/" onClick={toggleHome}>
+          <LgInNavLogo to="dashboard" onClick={toggleHome}>
             <img src="/images/logos/logo.svg" alt="logo" />
           </LgInNavLogo>
           <LgInMobileIcon onClick={toggle}>

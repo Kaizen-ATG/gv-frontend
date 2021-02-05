@@ -54,7 +54,7 @@ const LoggedInSidebar = ({ isOpen, toggle }) => {
           </LgInSidebarLinkWrapper>
         </LgInSidebarMenu>
         <LgInSideBtnWrap>
-          <LgInSidebarRoute to="/SignIn"> Log Out</LgInSidebarRoute>
+          <LgInSidebarRoute to="/SignIn">Sign Out</LgInSidebarRoute>
         </LgInSideBtnWrap>
       </LgInSidebarWrapper>
     </LgInSidebarContainer>
