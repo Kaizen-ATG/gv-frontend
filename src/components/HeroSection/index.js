@@ -22,7 +22,9 @@ const HeroSection = () => {
     <HeroContainer>
       <HeroImg src="/images/elements/background.svg" />
       <HeroContent>
-        <HeroH1>Do your bit for a greener globe, while earning rewards</HeroH1>
+        <HeroH1>
+          Do your bit for a greener AO Arena, while earning rewards
+        </HeroH1>
         <HeroP>
           For people who want to drive change and make a difference with helping
           save the environment.
