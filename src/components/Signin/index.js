@@ -3,7 +3,6 @@ import { CTAButton } from "../ButtonElement";
 import { Auth } from "aws-amplify";
 import { useAppContext } from "../../libs/contextLib";
 import { withRouter, useHistory } from "react-router-dom";
-
 import {
   Container,
   FormWrap,
@@ -19,6 +18,8 @@ import {
   ButtonWrapper,
   SignInSection,
   NavLink,
+  SigninButton,
+  CancelButton,
 } from "./SigninElements";
 
 const SignIn = () => {
@@ -44,11 +45,7 @@ const SignIn = () => {
         username,
         password,
       });
-
-      // console.log("USER", user);
-      const { idToken } = user.signInUserSession;
-      localStorage.setItem("gvToken", JSON.stringify(idToken));
-      console.log(idToken);
+      localStorage.setItem("email", user.attributes.email);
       history.push("../dashboard");
     } catch (error) {
       console.log("error signing in", error);
@@ -65,110 +62,40 @@ const SignIn = () => {
   };
 
   return (
-    <>
-      {/* <Container>
+      <Container>
         <FormWrap>
           <Icon to="/">
             <img src="/images/logos/logo.svg" alt="logo" />
           </Icon>
           <FormContent>
-            <Form onSubmit={(event) => handleSubmit(event)}>
+            <Form action="#" onSubmit={(event) => handleSubmit(event)}>
               <ImageWrapper
                 src="/images/elements/sign-in.svg"
                 alt="enter code"
               />
               <FormH1>Sign in</FormH1>
-              <FormLabel htmlFor="for">Email</FormLabel>
               <FormInput
                 onChange={handleChange}
-                type="email"
-                required
+                type="text"
                 placeholder="Enter Username"
                 name="username"
                 required
                 value={signInDetails.username}
               />
-              <FormLabel htmlFor="for">Password</FormLabel>
-              <FormInput type="password" required />
-              <div> */}
-      <form onSubmit={(event) => handleSubmit(event)}>
-        <div className="container">
-          <label>Username : </label>
-          <input
-            onChange={handleChange}
-            type="text"
-            placeholder="Enter Username"
-            name="username"
-            required
-            value={signInDetails.username}
-          />
-          <label>Password : </label>
-          <input
-            onChange={handleChange}
-            type="password"
-            placeholder="Enter Password"
-            name="password"
-            required
-            value={signInDetails.password}
-          />
-          <button type="submit">Signin</button>
-          {/* <input type="checkbox" checked="checked" /> Remember me */}
-          <button type="button" className="cancelbtn">
-            {" "}
-            Cancel
-          </button>
-          {/* Forgot <a href="#"> password? </a> */}
-        </div>
-      </form>
-      {/* </div>
-            </Form>
-          </FormContent>
-        </FormWrap>
-      </Container> */}
-    </>
-
-    /* { <Container>
-        <FormWrap>
-          <Icon to="/">
-            <img src="/images/logos/logo.svg" alt="logo" />
-          </Icon>
-          <FormContent>
-            <Form action="#">
-              <ImageWrapper
-                src="/images/elements/sign-in.svg"
-                alt="enter code"
+              <FormInput
+                onChange={handleChange}
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                required
+                value={signInDetails.password}
               />
-              <FormH1>Sign in</FormH1>
-              <FormLabel htmlFor="for">Email</FormLabel>
-              <FormInput type="email" required />
-              <FormLabel htmlFor="for">Password</FormLabel>
-              <FormInput type="password" required />
-              <SkipSection>
-                <NavLink to="">Forgot password?</NavLink>
-              </SkipSection>
-              <ButtonWrapper>
-                <CTAButton
-                  to="/dashboard"
-                  type="submit"
-                  onMouseEnter={onHover}
-                  onMouseLeave={onHover}
-                  primary="true"
-                  dark=""
-                  btnborder="true"
-                >
-                  {" "}
-                  Continue
-                </CTAButton>
-              </ButtonWrapper>
-              <SignInSection>
-                <Text>Don't have an account?</Text>
-                <NavLink to="/signup">Sign up</NavLink>
-              </SignInSection>
+              <SigninButton type="submit">Signin</SigninButton>
+              <CancelButton type="button" className="cancelbtn">{" "} Cancel</CancelButton>
             </Form>
           </FormContent>
         </FormWrap>
-      </Container> }*/
-    // </>
+    </Container>
   );
 };
 

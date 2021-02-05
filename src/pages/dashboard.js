@@ -10,9 +10,9 @@ import { addUsers, readUserDetail } from "../redux/users.actions.js";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-
   const isAdmin = useSelector((state) => state.users.admin);
-
+  const userLogged = localStorage.email;
+  console.log(userLogged);
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const getUsersList = async () => {
@@ -20,7 +20,7 @@ const Dashboard = () => {
       dispatch(addUsers(response));
     };
     const getUserDetails = async () => {
-      const user = await getUser();
+      const user = await getUser(userLogged);
       dispatch(readUserDetail(user));
     };
     getUsersList();
@@ -44,6 +44,7 @@ const Dashboard = () => {
               note="Here’s a look at your score this week"
               greenweekpoints={info.WeekGP}
               carbonweekpoints={info.WeekCP}
+              username={info.UserName}
             />
           ))}
         <LeaderboardSection />

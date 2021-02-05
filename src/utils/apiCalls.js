@@ -18,11 +18,10 @@ export const getOffers = async () => {
   }
 };
 
-export const saveUser = async (id, useremail, name) => {
+export const saveUser = async (name,useremail) => {
   try {
     console.log("Trying save user");
     const postData = {
-      userid: id,
       username: name,
       email: useremail,
     };
@@ -34,10 +33,10 @@ export const saveUser = async (id, useremail, name) => {
   }
 };
 
-export const getUser = async () => {
+export const getUser = async (email) => {
   try {
     const { data } = await axios.get(
-      `${BASE_URL}/users/4ec20f9f-4eec-43b8-88ce-2d7f9af7cd66/user`
+      `${BASE_URL}/users/${email}/user`
     );
     return data;
   } catch (error) {
