@@ -4,9 +4,9 @@ export const homeObjOne = {
   lightText: true,
   lightDesc: true,
   topLine: "About Green Vibe",
-  headline: "Reduce, Reuse, Recycle",
+  headline: "Recycle, Earn Points, Level Up",
   description:
-    "Here’s your chance to help make a change in a better way while still earning points and getting a chance to some great Gigs in town or even other popular events.",
+    "Here’s your chance to help make a change in a better way while still earning points and getting a chance to some great Gigs at the AO Arena or even other popular events.",
   buttonLabel: "Get started",
   imgStart: false,
   img: "/images/characters/recycling01.svg",
