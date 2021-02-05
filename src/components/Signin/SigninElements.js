@@ -145,3 +145,48 @@ export const SignInSection = styled.div`
   grid-template-columns: 1fr 60px;
   margin-top: 32px;
 `;
+export const SigninButton = styled.button`
+  border-radius: 24px;
+  background: #010101;
+  white-space: nowrap;
+  padding: 14px 48px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-bottom:20px;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    border: 1px solid #010606;
+    color: #010606;
+  }
+`;
+export const CancelButton = styled.button`
+  border-radius: 24px;
+  background: #fff;
+  white-space: nowrap;
+  padding: 14px 48px;
+  color: #0ea44b;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    border: 1px solid #010606;
+    color: #010606;
+  }
+`;

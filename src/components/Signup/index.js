@@ -21,8 +21,6 @@ import {
 } from "./SignupElements";
 
 const SignIn = (props) => {
-  //const { isAuthenticated } = useContext(useAppContext);
-  // const [isAuthenticated, userHasAuthenticated] = useState(false);
   const [hover, setHover] = useState(false);
 
   const [signUpDetails, setSignUpDetails] = useState({
@@ -44,39 +42,21 @@ const SignIn = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { username, password, email } = signUpDetails;
+    const { username, password, fullname } = signUpDetails;
 
     console.log(e.target);
     try {
       const { user } = await Auth.signUp({
         username,
-        password,
-        attributes: {
-          email, // optional
-
-          // other custom attributes
-        },
+        password
       });
-
-      //POST request to add user to User DB
-      const { idToken } = user.signInUserSession;
-      localStorage.setItem("gvToken", JSON.stringify(idToken));
-      console.log(idToken);
-      const userid = Object.keys(user.storage)[0].split(".")[2];
-      //console.log(Object.keys(user.storage)[0]);
-
-      await saveUser(userid, email, username);
-
-      console.log(typeof userid, userid);
+      await saveUser(fullname,username);
     } catch (error) {
-      // to do: what happens if there is an error when signing up? - you could render an error.
-      // to do: conditionally render div in react - setError(error.message)
       console.log("error signing up:", error);
     }
-
+    localStorage.setItem("email", username);
     history.push("../dashboard");
   };
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     console.log(name, value);
@@ -101,36 +81,33 @@ const SignIn = (props) => {
               />
               <FormH1>Sign up</FormH1>
 
-              <FormLabel htmlFor="username">Username</FormLabel>
+              <FormLabel htmlFor="fullname">Username</FormLabel>
 
               <FormInput
                 onChange={handleChange}
                 type="text"
-                id="username"
-                name="username"
-                value={signUpDetails.username}
+                id="fullname"
+                name="fullname"
+                value={signUpDetails.fullname}
               />
               <FormLabel htmlFor="email">Email</FormLabel>
-
               <FormInput
                 onChange={handleChange}
                 type="text"
                 id="email"
-                name="email"
-                value={signUpDetails.email}
+                name="username"
+                value={signUpDetails.username}
               />
               <FormLabel htmlFor="password">Password</FormLabel>
 
               <FormInput
                 onChange={handleChange}
-                type="text"
+                type="password"
                 id="password"
                 name="password"
                 value={signUpDetails.password}
               />
-              <ButtonWrapper>
-                <button type="submit"> Submit</button>
-              </ButtonWrapper>
+              <ButtonWrapper type="submit">Submit</ButtonWrapper>
               <SignInSection>
                 <Text>Already have an account?</Text>
                 <NavLink to="/signin">Sign in</NavLink>
@@ -141,49 +118,6 @@ const SignIn = (props) => {
       </Container>
     </>
   );
-
-  /* <Container>
-        <FormWrap>
-          <Icon to="/">
-            {" "}
-            <img src="/images/logos/logo.svg" alt="logo" />
-          </Icon>
-          <FormContent>
-            <Form action="#">
-              <ImageWrapper
-                src="/images/elements/sign-in.svg"
-                alt="enter code"
-              />
-              <FormH1>Sign up</FormH1>
-              <FormLabel htmlFor="for">Username</FormLabel>
-              <FormInput type="username" required />
-              <FormLabel htmlFor="for">Email</FormLabel>
-              <FormInput type="email" required />
-              <FormLabel htmlFor="for">Password</FormLabel>
-              <FormInput type="password" required />
-              <ButtonWrapper>
-                <CTAButton
-                  to="/dashboard"
-                  type="submit"
-                  onMouseEnter={onHover}
-                  onMouseLeave={onHover}
-                  primary="true"
-                  dark=""
-                  btnborder="true"
-                >
-                  {" "}
-                  Continue
-                </CTAButton>
-              </ButtonWrapper>
-              <SignInSection>
-                <Text>Already have an account?</Text>
-                <NavLink to="/signin">Sign in</NavLink>
-              </SignInSection>
-            </Form>
-          </FormContent>
-        </FormWrap>
-      </Container> */
 };
 
 export default SignIn;
-//const { userHasAuthenticated } = useAppContext();
