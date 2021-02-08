@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 //import redeemoffers from "../../data/redeemoffers.json";
 import OffersCell from "../OffersCell";
 import PointsBar from "../PointsBar";
 import { getOffers } from "../../utils/apiCalls.js";
+import lottie from "lottie-web";
+import animationData from "./offers.json";
 import { useSelector } from "react-redux";
 import {
   SectionCaption,
@@ -11,7 +13,6 @@ import {
   Text,
   GreenText,
   DealWrap,
-  ImageWrapper,
   Container,
   BarContainer,
   OffersDiv,
@@ -21,23 +22,39 @@ import {
   OfferText,
 } from "./RedeemElements";
 
-
 const barData = [{ bgcolor: "#0EA44B" }];
 const RedeemOffersSection = (props) => {
   const [offers, setOffers] = useState();
-  const userInfo = useSelector(state => state.users.userDetail);
+  const userInfo = useSelector((state) => state.users.userDetail);
   useEffect(() => {
     const getRedeemOffers = async () => {
       const response = await getOffers();
       setOffers(response);
-    }
+    };
     getRedeemOffers();
   }, []);
+
+  const container = useRef(null);
+
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: "svg",
+      loop: false,
+      autoplay: true,
+      animationData: animationData,
+    });
+  }, []);
+
   return (
     <>
       <Container>
         <DealWrap>
-          <ImageWrapper src="/images/elements/rewards.svg" alt="enter code" />
+          <div
+            className="container"
+            ref={container}
+            style={{ width: 240, margin: "0 auto" }}
+          ></div>
           <ContentH1>You've got 5 deals </ContentH1>
           <Text>Earn more points - Get rewarded!</Text>
           <GreenText>Here's your Green Points Score</GreenText>
@@ -49,7 +66,7 @@ const RedeemOffersSection = (props) => {
               bgcolor={item.bgcolor}
               completed={userInfo && userInfo[0].GreenPoints}
               completedpercentage={
-                (userInfo && ((userInfo[0].GreenPoints / 450) * 100))
+                userInfo && (userInfo[0].GreenPoints / 450) * 100
               }
             />
           ))}
@@ -68,16 +85,20 @@ const RedeemOffersSection = (props) => {
       </Container>
       <SectionCaption>Online and In Store Offers</SectionCaption>
       <SectionCellGroup>
-        {offers && offers.map((offer) => (
-
-          <OffersCell
-            title={offer.Dealtype}
-            key={offer.Dealtype}
-            image={'https://greenvibe.s3.eu-west-2.amazonaws.com/images/Retailers/' + offer.Dealtype + '.svg'}
-            disc={offer.Description}
-            dest="offersummary"
-          />
-        ))}
+        {offers &&
+          offers.map((offer) => (
+            <OffersCell
+              title={offer.Dealtype}
+              key={offer.Dealtype}
+              image={
+                "https://greenvibe.s3.eu-west-2.amazonaws.com/images/Retailers/" +
+                offer.Dealtype +
+                ".svg"
+              }
+              disc={offer.Description}
+              dest="offersummary"
+            />
+          ))}
       </SectionCellGroup>
     </>
   );

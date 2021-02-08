@@ -37,6 +37,7 @@ export const PlayerAvatar = styled.img`
     width: 90px;
   }
 `;
+
 export const PlayerPoints = styled.div`
   margin: 12px 0 0;
   display: grid;
