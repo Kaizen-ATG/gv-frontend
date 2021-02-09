@@ -20,6 +20,24 @@ export const CellGroup = styled(LinkR)`
     transform: translate(5px, 0px);
   }
 `;
+
+export const CellGroups = styled(LinkR)`
+  margin: 0 20px auto;
+  display: grid;
+  grid-template-columns: 60px auto 30px;
+  grid-gap: 24px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  opacity: 0.4;
+  pointer-events: none;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    transform: translate(5px, 0px);
+  }
+`;
+
 export const CellImage = styled.div`
   width: 60px;
   height: 60px;

@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  CellGroup,
+  CellGroup, CellGroups,
   CellImage,
   CellContent,
   CellTitle,
@@ -13,7 +13,7 @@ import {
 } from "./OffersCellElements";
 
 const OffersCell = (props) => (
-  <CellGroup
+  props.eligible ? <CellGroup
     to={{
 
       pathname: "/redeem-summary",
@@ -32,7 +32,27 @@ const OffersCell = (props) => (
     <NavItem>
       <NavBtn>{<RightArrowIcon />}</NavBtn>
     </NavItem>
-  </CellGroup>
+  </CellGroup> : <CellGroups
+    to={{
+
+      pathname: "/redeem-summary",
+      state: { disc: props.disc, title: props.title },
+    }}
+  >
+
+      <CellImage image={props.image}></CellImage>
+      <CellContent>
+        <CellTitle>{props.title}</CellTitle>
+        <CellPoints>
+          <> {<BagIconTick />}</>
+          <Discount>{props.disc}</Discount>
+        </CellPoints>
+      </CellContent>
+      <NavItem>
+        <NavBtn>{<RightArrowIcon />}</NavBtn>
+      </NavItem>
+    </CellGroups>
+
 );
 
 export default OffersCell;

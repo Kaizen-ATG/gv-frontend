@@ -69,13 +69,13 @@ const RedeemOffersSection = (props) => {
       <SectionCaption>Online and In Store Offers</SectionCaption>
       <SectionCellGroup>
         {offers && offers.map((offer) => (
-
           <OffersCell
             title={offer.Dealtype}
             key={offer.Dealtype}
             image={'https://greenvibe.s3.eu-west-2.amazonaws.com/images/Retailers/' + offer.Dealtype + '.svg'}
             disc={offer.Description}
             dest="offersummary"
+            eligible={offer.PointsRequired <= userInfo[0].GreenPoints}
           />
         ))}
       </SectionCellGroup>
