@@ -58,8 +58,8 @@ export const ContentWrapper = styled.div`
 
 export const TextWrapper = styled.div`
   display: grid;
-  grid-template-columns: 14px auto;
-padding 12px 0;
+  grid-template-columns: 14px auto; 
+  padding 12px 0;
   border-bottom: 1px solid #b3b3b3;
   /* padding: 8px 16px; */
   min-width: 350px;
